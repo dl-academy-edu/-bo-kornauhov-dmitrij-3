@@ -1,0 +1,252 @@
+@import "./mixin";
+@import "./colors";
+@import "./vars";
+
+.popup {
+	background: rgba(246, 246, 246, 0.99);
+	position: fixed;
+	z-index: 5;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: none;
+
+	@include media(0, $m_tab) {
+		background: $c__white;
+	}
+
+
+	&__form {
+		position: relative;
+		padding: 40px;
+		border: 2.5px solid $c__black;
+		background: $c__white;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		&--login,
+		&--pass {
+			max-width: 370px;
+		}
+
+		&--register,
+		&--send,
+		&--data  {
+			max-width: 680px;
+		}
+
+		@include media(0, $m_tab) {
+			padding: 0 20px;
+			border: none;
+		}
+	}
+
+	&__coll {
+		display: flex;
+
+		@include media(0, $m_tab) {
+			display: block;
+		}
+	}
+
+		&__coll-50 {
+			width: 50%;
+			margin-right: 20px;
+
+			&--file {
+				position: relative;
+				width: 48.3%;
+			}
+
+			@include media(0, $m_tab) {
+				width: 100%;
+			}
+
+			&:last-child {
+				margin-right:0;
+			}
+		}
+
+	
+
+	&__label {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		margin: 0 0 20px 0;
+
+		&--checkbox {
+			display: flex;
+			flex-direction: row;
+			cursor: pointer;
+			align-items: center;
+		}
+
+		&--file {
+			position: relative;
+			margin-bottom: 30px;
+		}
+	}
+
+	&__text {
+		margin-bottom: 6px;
+		font-size: 14px;
+		line-height: 16px;
+		display: inline-block;
+	}
+
+	&__star {
+		color: #EB3617;
+		margin-left: 5px;
+	}
+
+	&__input {
+		width: 100%;
+		padding: 14px;
+		font-size: 18px;
+		line-height:21px;
+		font-weight: 500;
+		color: $c__black;
+		outline: 2.5px solid $c__gray--light;
+		border: none;
+		transition: $transition ease-in-out;
+
+
+		&:hover {
+			outline: 2.5px solid $c__gray;
+		}
+
+		&:focus {
+			outline: 2.5px solid $c__black;
+		}
+	}
+
+		&-file {
+			position: absolute;
+			top: 30px;
+			left: 4px;
+			width: 97%;
+			display: flex;
+			align-items: center;
+			background: white;
+			padding: 10px;
+
+			pointer-events: none;
+
+			&__img {
+				margin-right: 10px;
+			}
+
+			&__text {
+				font-size: 18px;
+				font-weight: 500;
+				line-height: 21px;
+				color: $c__black;
+			}
+	}
+
+	&__textarea {
+		height: 150px;
+		padding: 14px;
+		resize: none;
+		font-size: 18px;
+		line-height:21px;
+		outline: 2.5px solid $c__gray--light;
+		border: none;
+		transition: $transition ease-in-out;
+
+		&:hover {
+			outline: 2.5px solid $c__gray;
+		}
+
+		&:focus {
+			outline: 2.5px solid $c__black;
+		}
+	}
+
+	
+	&__checkbox {
+
+		&-checker {
+			position: relative;
+			width: 19px;
+			height: 19px;	
+			padding: 10px 15px 0 0;
+			display: inline-block;
+
+			border: 2.5px solid $c__black;
+			border-radius: 3px;
+			opacity: .1;
+		}
+
+		&-text {
+			max-width: 487px;
+			margin-left:15px;
+			font-size: 14px;
+			line-height: 16px;
+			opacity: 0.1;
+			transition: opacity $transition ease-in-out;
+		}
+
+
+		&:checked ~ .popup__checkbox-checker::before {
+			position: absolute;
+			top: -2px;
+			left: 1px;
+
+			width: 15px;
+			height: 15px;
+			background: url(static/images/icon-check.svg);
+			content: "";
+			transition: $transition ease-in-out;
+		}
+
+			&:checked ~ .popup__checkbox-checker,
+			&:checked ~ .popup__checkbox-text {
+				opacity: 1;
+		}
+
+			.popup__label--checkbox:hover .popup__checkbox-checker,
+			.popup__label--checkbox:hover .popup__checkbox-text {
+				opacity: 0.5;
+			}
+
+			.popup__checkbox:focus ~ .popup__checkbox-checker,
+			.popup__checkbox:focus ~ .popup__checkbox-text {
+				opacity: 0.5;
+			}
+
+			.popup__label--checkbox:hover ~ .popup__button {
+				color: $c__gray;
+
+				border-color: $c__gray;
+			}
+
+			.popup__label--checkbox:hover .popup__checkbox:disabled ~ .popup__checkbox-checker,
+			.popup__label--checkbox:hover .popup__checkbox:disabled ~ .popup__checkbox-text {
+				opacity: 0.1;
+			}
+	}
+
+	&__close {
+		position: absolute;
+		top: -3px;
+		right: -40px;
+		background: transparent;
+		cursor: pointer;
+		opacity: 0.5;
+		transition: $transition ease-in-out;
+
+		&:hover,
+		&:focus {
+			opacity: 1;
+		}
+
+		@include media(0, $m_tab) {
+			top: -45px;
+			left: 20px;
+		}
+	}
+}

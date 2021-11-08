@@ -1,0 +1,112 @@
+.skills {
+	&__content {
+		text-align: center;
+		padding: 60px 0;
+
+		@include media(0, $m_tab) {
+			padding: 60px 0 20px 0;
+		}
+
+		@include media(0, $m_mob) {
+			padding: 40px 0 10px 0;
+		}
+	}
+
+	&__subtitle {
+		margin: 20px 0 50px 0;
+
+		@include media(0, $m_mob) {
+			margin: 10px 0 40px 0;
+		}
+	}
+
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin: 0 -10px;
+	}
+
+	&__item {
+		align-items: center;
+		width: 180px;
+		margin: 0 10px;
+		display: flex;
+		flex-direction: column;
+		font-size: 14px;
+		line-height: 17px;
+		font-weight: 700;
+		color: $c__gray;
+
+		@include media(0, $m_pc) {
+			margin-bottom: 40px;
+		}
+
+		@include media($m_tab, $m_pc) {
+			width: 147px;
+		}
+
+		@include media(0, $m_tab) {
+			width: 130px;
+			margin: 0 10px 40px 10px;
+		}
+	}
+
+	&__name {
+		margin: 20px 0 28px 0;
+	}
+}
+
+.skills-progress {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__interest {
+		margin-right: 12px;
+	}
+
+	&__bar {
+		position: relative;
+		width: 142px;
+		height: 9px;
+		background: #e5e5e5;
+
+		@include media($m_mob, $m_pc) {
+			width: 111px;
+		}
+
+		@include media(0, $m_mob) {
+			width: 94px;
+		}
+
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			content: "";
+			background: $c__black;
+		}
+
+		&--html::after {
+			right: 15%;
+		}
+
+		&--css::after {
+			right: 45%;
+		}
+
+		&--script::after {
+			right: 95%;
+		}
+
+		&--git::after {
+			right: 85%;
+		}
+
+		&--figma::after {
+			right: 20%;
+		}
+	}
+}

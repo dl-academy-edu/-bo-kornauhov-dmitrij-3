@@ -1,0 +1,30 @@
+@import "./mixin";
+@import "./colors";
+@import "./vars";
+
+.button,
+.link {
+	display: inline-block;
+	font-size: 18px;
+	line-height: 22px;
+	font-weight: 700;
+	padding: 8px 18px;
+	border-radius: 30px;
+	border: 2.5px solid $c__black;
+	cursor: pointer;
+	color: $c__black;
+	background: transparent;
+	transition: $transition ease-in-out;
+
+	&:hover,
+	&:focus {
+		background: $c__black;
+		color: $c__white;
+	}
+
+	&:disabled {
+		border: 2.5px solid $c__gray--light;
+		color: $c__gray--light;
+		cursor: auto;
+	}
+}

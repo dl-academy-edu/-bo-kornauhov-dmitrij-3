@@ -1,0 +1,367 @@
+@import "./mixin";
+@import "./colors";
+@import "./vars";
+
+.calc {
+
+	margin: 40px 0 20px 0;
+
+		@include media(0, $m_mob--md) {
+			margin: 30px 0 20px 0;
+		}
+
+		&__title {
+			@include media(0, $m_mob--md) {
+				width: 100px;
+		}
+	}
+}
+
+.calc-form {
+	margin: 40px 0 0 0;
+
+	&__top {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 0 35px 0;
+
+		@include media(0, $m_mob--md) {
+			justify-content: space-between;
+		}
+	}
+
+	&__fieldset {
+		font-size: 14px;
+		line-height: 16px;
+
+		@include media($m_mob--md, $m_pc) {
+			margin: 0 0 30px 0;
+		}
+
+		@include media(0, $m_mob--md) {
+			margin: 0 0 25px 0;
+			width: 45%;
+		}
+
+		&--tags {
+			margin: 0 77px 0 0;
+
+			@include media(0, $m_pc) {
+				order: 4;
+			}
+
+			@include media($m_mob--md, $m_pc) {
+				margin-right: 52px;
+			}
+
+			@include media(0, $m_mob--md) {
+				margin-right: 0;
+			}
+		}
+
+		&--views {
+			margin: 0 70px 0 0;
+
+			@include media(0, $m_pc) {
+				order: 1;
+			}
+
+			@include media($m_mob--md, $m_pc) {
+				margin-right: 53px;
+			}
+
+			@include media(0, $m_mob--md) {
+				margin-right: 0;
+			}
+		}
+
+		&--comments {
+			margin: 0 137px 0 0;
+
+			@include media(0, $m_pc) {
+				order: 0;
+			}
+
+			@include media($m_mob--md, $m_pc) {
+				margin-right: 52px;
+			}
+
+			@include media(0, $m_mob--md) {
+				margin-right: 0;
+			}
+		}
+
+		&--show {
+			margin: 0 76px 0 0;
+
+			@include media(0, $m_pc) {
+				order: 3;
+			}
+
+			@include media($m_mob--md, $m_pc) {
+				margin-right: 23px;
+			}
+
+			@include media(0, $m_mob--md) {
+				margin-right: 0;
+			}
+		}
+
+		&--sort {
+			margin-right: 40px;
+
+			@include media(0, $m_pc) {
+				order: 2;
+			}
+
+			@include media($m_mob--md, $m_pc) {
+				margin-right: 81px;
+			}
+
+			@include media(0, $m_mob--md) {
+				margin-right: 0;
+			}
+		}
+
+		&--reset {
+			margin: 10px 0 -5px 0;
+			align-items: center;
+			order: 5;
+		}
+	}
+
+	&__title {
+		margin: 0 0 10px 0;
+
+		&--reset {
+			margin: 0 0 5px 8px;
+			font-size: 14px;
+			line-height: 16px;
+			color: $c__gray--light;
+		}
+	}
+
+	&__box {
+		width: 120px;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__radio-label,
+	&__check-label {
+		display: flex;
+	}
+
+	&__radio-label {
+		margin: 0 0 10px 0;
+	}
+
+	&__check {
+		display: inline-block;
+		width: 25px;
+		height: 25px;
+		border: 2.5px solid C__black;
+		border-radius: 5px;
+		position: relative;
+		cursor: pointer;
+		margin: 0 5px 5px 0;
+		transition: $transition ease-in-out;
+		opacity: 0.1;
+
+		&--2176FF {
+			border: 2.5px solid #2176ff;
+		}
+
+		&--33A1FD {
+			border: 2.5px solid #33a1fd;
+		}
+
+		&--FDCA40 {
+			border: 2.5px solid #fdca40;
+		}
+
+		&--57E2E5 {
+			border: 2.5px solid #57e2e5;
+		}
+
+		&--F79824 {
+			border: 2.5px solid #f79824;
+		}
+
+		&--E08DAC {
+			border: 2.5px solid #e08dac;
+		}
+
+		&--6A7FDB {
+			border: 2.5px solid #6a7fdb;
+		}
+
+		&--45CB85 {
+			border: 2.5px solid #45cb85;
+		}
+
+		&::before {
+			background-image: url(static/images/icon-check.svg);
+			content: "";
+			position: absolute;
+			top: 3px;
+			left: 3px;
+			width: 15px;
+			height: 15px;
+			opacity: 0;
+		}
+
+		&--2176FF::before {
+			background: url(static/images/icon-check-2176ff.svg);
+		}
+
+		&--33A1FD::before {
+			background: url(static/images/icon-check-33a1fd.svg);
+		}
+
+		&--FDCA40::before {
+			background: url(static/images/icon-check-fdca40.svg);
+		}
+
+		&--57E2E5::before {
+			background: url(static/images/icon-check-57e2e5.svg);
+		}
+
+		&--F79824::before {
+			background: url(static/images/icon-check-f79824.svg);
+		}
+
+		&--E08DAC::before {
+			background: url(static/images/icon-check-e08dac.svg);
+		}
+
+		&--6A7FDB::before {
+			background: url(static/images/icon-check-6a7fdb.svg);
+		}
+
+		&--45CB85::before {
+			background: url(static/images/icon-check-45cb85.svg);
+		}
+	}
+
+	&__input:checked ~ &__check::before {
+		opacity: 1;
+	}
+
+	&__input:hover ~ &__check,
+	&__input:hover ~ &__check-text {
+		opacity: 0.5;
+	}
+
+	&__input:checked ~ &__check,
+	&__input:checked ~ &__check-text {
+		opacity: 1;
+	}
+
+	&__input:disabled ~ &__check::before {
+		opacity: 0.1;
+		cursor: auto;
+	}
+
+	&__input:disabled ~ &__check,
+	&__input:disabled ~ &__check-text {
+		opacity: 0.1;
+		cursor: auto;
+	}
+
+	&__input:hover ~ &__radio,
+	&__input:hover ~ &__radio-text {
+		opacity: 0.5;
+	}
+
+	&__input:checked ~ &__radio,
+	&__input:checked ~ &__radio-text {
+		opacity: 1;
+	}
+
+	&__input:disabled ~ &__radio,
+	&__input:disabled ~ &__radio-text {
+		opacity: 0.1;
+		cursor: auto;
+	}
+
+	&__radio {
+		display: block;
+		width: 25px;
+		height: 25px;
+		border: 2.5px solid $c__black;
+		border-radius: 30px;
+		position: relative;
+		cursor: pointer;
+		margin: 0 12px 0 0;
+		opacity: 0.1;
+		transition: $transition ease-in-out;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 3.5px;
+			left: 3.5px;
+			width: 13px;
+			height: 13px;
+			border-radius: 50%;
+			background: $c__black;
+		}
+	}
+
+	&__radio-text {
+		opacity: 0.1;
+		transition: $transition ease-in-out;
+		cursor: pointer;
+	}
+
+	&__check-text {
+		margin-left: 5px;
+		transition: $transition ease-in-out;
+		opacity: 0.1;
+		cursor: pointer;
+	}
+}
+
+.calc-search {
+	display: flex;
+	align-items: center;
+
+	@include media(0, 671px) {
+		flex-wrap: wrap;
+	}
+
+	&__input {
+		width: 100%;
+		padding: 12px 14px;
+		outline: 2.5px solid $c__gray--light;
+		border: none;
+		transition: $transition ease-in-out;
+
+		margin: 0 28px 0 0;
+		font-size: 18px;
+		color: $c__black;
+
+		@include media(0, 671px) {
+			margin: 0 0 20px 0;
+		}
+
+		&:hover {
+			outline: 2.5px solid $c__gray;
+		}
+
+		&:focus {
+			outline: 2.5px solid $c__black;
+		}
+	}
+
+	&__button {
+		padding: 7.5px 17.5px;
+
+		@include media(0, 671px) {
+			margin-left: auto;
+		}
+	}
+}
+
+

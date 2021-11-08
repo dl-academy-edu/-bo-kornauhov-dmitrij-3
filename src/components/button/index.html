@@ -1,0 +1,12 @@
+@@if (type === 'button' && disabled === 'no') {
+<button class="button @@class">@@text</button>
+}
+
+@@if (type === 'button' && disabled === 'yes') {
+<button class="button @@class" disabled>@@text</button>
+}
+
+
+@@if (type === 'link') {
+<a class="link @@class" href="@@href">@@text</a>
+}

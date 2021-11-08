@@ -1,0 +1,38 @@
+.arrow {
+	&-button {
+		z-index: 4;
+		width: 42px;
+		height: 42px;
+		background: transparent;
+		position: relative;
+		border: 2.5px solid #070707;
+		border-radius: 50%;
+		cursor: pointer;
+		transition: $transition ease-in-out;
+
+		&--right {
+			transform: rotate(180deg);
+		}
+
+		&__img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		&:hover,
+		&:focus {
+			opacity: 0.4;
+		}
+
+		&:active {
+			opacity: 0.2;
+		}
+
+		&:disabled {
+			opacity: 0.1;
+			cursor: auto;
+		}
+	}
+}

@@ -1,0 +1,80 @@
+@import "./mixin";
+@import "./colors";
+@import "./vars";
+
+.profile {
+	padding: 40px 0;
+
+	@include media(0, 600px) {
+		padding: 30px 0 40px 0;
+	}
+
+	&__content {
+		display: flex;
+
+		@include media(0, 600px) {
+			flex-direction: column;
+		}
+	}
+
+	&__title {
+
+		@include media(0, 600px) {
+			max-width: 205px;
+		}
+	}
+
+	&__img-box {
+		margin: 40px 105px 0 0;
+		width: 320px;
+		height: 450px;
+		background: $c__gray-white;
+		box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include media($m_mob, 802px) {
+			margin: 40px 76px 0 0;
+		}
+
+		@include media(0, 600px) {
+			width: 280px;
+		}
+	}
+
+	&__info {
+		margin: 40px 0 0 0;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+	}
+
+	&__info-list {
+		margin: 0 0 40px 0;
+	}
+
+	&__info-item {
+		margin: 0 0 20px 0;
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	&__info-title,
+	&__info-text {
+		font-size: 18px;
+		line-height: 21px;
+		color: c__black;
+	}
+
+	&__info-title {
+		font-weight: 700;
+		margin-right: 15px;
+	}
+
+	&__button {
+		margin: 0 0 20px 0;
+	}
+}

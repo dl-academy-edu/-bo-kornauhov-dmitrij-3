@@ -1,0 +1,38 @@
+<section class="first-screen">
+	<div class="container">
+		<div class="first-screen__content">
+			<div class="first-screen__info">
+				<h1 class="first-screen__title title-one">Antonina Antoninovna</h1>
+				<p class=" text first-screen__text">Future front-end developer
+				23 years old, Tolyatti</p>
+			</div>
+			<div class="first-screen__slider slider">
+				<picture>
+					<source srcset="/static/images/first-screen.jpg, /static/images/first-screen-retina.jpg 2x" media="(min-width
+					769px)">
+					<source srcset="/static/images/first-screen-tab.jpg" media="(min-width: 375px) and (max-width: 768px)">
+					<source srcset="/static/images/first-screen-mob.jpg" media="(max-width: 374px)">
+				<img class="slider__img" src="/static/images/first-screen.jpg" alt="slider">
+				</picture>
+				<div class="slider__paginations">
+					@@include('arrow-button/index.html', {
+					"class": "slider__button",
+					"type": "normal",
+					"rotation": "left"
+					})
+						<ul class="slider__btn-list">
+							<li class="slider__btn-item"><button class="slider__btn"></button></li>
+							<li class="slider__btn-item"><button class="slider__btn"></button></li>
+							<li class="slider__btn-item"><button class="slider__btn"></button></li>
+							<li class="slider__btn-item"><button class="slider__btn"></button></li>
+						</ul>
+					@@include('arrow-button/index.html', {
+					"class": "slider__button",
+					"type": "normal",
+					"rotation": "right"
+					})
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

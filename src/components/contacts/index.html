@@ -1,0 +1,71 @@
+<footer class="contacts">
+	<div class="container">
+		<div class="contacts__content">
+			<h2 class="contacts__title title-two">Contacts</h2>
+			<p class="contacts__subtitle">Want to know more or just chat?
+				You are welcome!</p>
+			@@include('button/index.html', {
+			"type": "button",
+			"text": "Send message",
+			"class": "contacts__button",
+			"disabled": "no",
+			"href": "#"
+			})
+			<ul class="contacts__list">
+				<li class="contacts__item">
+					@@include('button/index.html', {
+					"type": "link",
+					"text": "Instagram",
+					"class": "contacts__link",
+					"href": "#"
+					})
+				</li>
+				<li class="contacts__item">
+					@@include('button/index.html', {
+					"type": "link",
+					"text": "Vk",
+					"class": "contacts__link",
+					"href": "#"
+					})
+				</li>
+				<li class="contacts__item">
+					@@include('button/index.html', {
+					"type": "link",
+					"text": "Telegram",
+					"class": "contacts__link",
+					"href": "#"
+					})
+				</li>
+				<li class="contacts__item">
+					@@include('button/index.html', {
+					"type": "link",
+					"text": "Mail",
+					"class": "contacts__link",
+					"href": "#"
+					})
+				</li>
+				<li class="contacts__item">
+					@@include('button/index.html', {
+					"type": "link",
+					"text": "GitHub",
+					"class": "contacts__link",
+					"href": "#"
+					})
+				</li>
+				<li class="contacts__item">
+					@@include('button/index.html', {
+					"type": "link",
+					"text": "Phone",
+					"class": "contacts__link",
+					"href": "#"
+					})
+				</li>
+			</ul>
+			<div class="contacts-design contacts__design">
+				<span class="contacts-design__text">Design by </span>
+				<a class="contacts-design__link">DL Academy</a>
+			</div>
+			<span class="contacts__text">Program code from Antonina</span>
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,57 @@
+<div class="profile">
+	<div class="container">
+		<h1 class="profile__title title-one">My profile</h1>
+		<div class="profile__content">
+			<div class="profile__img-box">
+				<img class="profile__img-photo" src="/static/images/profile-no-photo.svg" width="120" height="144">
+			</div>
+			<div class="profile__info">
+				<ul class="profile__info-list">
+					<li class="profile__info-item">
+						<span class="profile__info-title">Name:</span>
+						<span class="profile__info-text">Oksana</span>
+					</li>
+					<li class="profile__info-item">
+						<span class="profile__info-title">Surname:</span>
+						<span class="profile__info-text">Larioshkina</span>
+					</li>
+					<li class="profile__info-item">
+						<span class="profile__info-title">Email:</span>
+						<span class="profile__info-text">larioshkina@gmail.com</span>
+					</li>
+					<li class="profile__info-item">
+						<span class="profile__info-title">Password:</span>
+						<span class="profile__info-text">**********</span>
+					</li>
+					<li class="profile__info-item">
+						<span class="profile__info-title">Location:</span>
+						<span class="profile__info-text">Tolyatti</span>
+					</li>
+					<li class="profile__info-item">
+						<span class="profile__info-title">Age:</span>
+						<span class="profile__info-text">23</span>
+					</li>
+				</ul>
+				@@include('button/index.html', {
+				"type": "button",
+				"text": "Change password",
+				"class": "profile__button profile__change-pass",
+				"disabled": "no"
+				})
+				@@include('button/index.html', {
+				"type": "button",
+				"text": "Change other data",
+				"class": "profile__button profile__change-data",
+				"disabled": "no"
+				})
+				@@include('button/index.html', {
+				"type": "button",
+				"text": "Delete account",
+				"class": "profile__button profile__delete",
+				"disabled": "no"
+				})
+
+			</div>
+		</div>
+	</div>
+</div>

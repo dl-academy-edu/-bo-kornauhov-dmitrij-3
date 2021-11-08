@@ -1,0 +1,145 @@
+@import "./mixin";
+@import "./colors";
+@import "./vars";
+
+.blog {
+	&__list {
+		@include media(0, 670px) {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		border-top: 2px solid $c__gray--light;
+		padding: 20px 0;
+
+		@include media(0, 670px) {
+			flex-direction: column;
+			width: 280px;
+		}
+	}
+
+	&__info {
+		margin: 0 0 0 20px;
+		max-width: 640px;
+
+		@include media(0, 670px) {
+			max-width: 280px;
+			margin: 0;
+		}
+	}
+
+	&__img {
+		max-width: none;
+	}
+
+	&__title {
+		font-size: 24px;
+		line-height: 29px;
+	}
+
+	&__tag-item {
+		display: inline-block;
+		width: 30px;
+		height: 10px;
+		background: black;
+		border-radius: 5px;
+
+		@include media(0, 660px) {
+			margin-top: 10px;
+		}
+
+		&--F79824 {
+			background: #f79824;
+		}
+
+		&--6A7FDB {
+			background: #6a7fdb;
+		}
+
+		&--45CB85 {
+			background: #45cb85;
+		}
+
+		&--33A1FD {
+			background: #33a1fd;
+		}
+
+		&--2176FF {
+			background: #2176ff;
+		}
+
+		&--E08DAC {
+			background: #e08dac;
+		}
+
+		&--57E2E5 {
+			background: #57e2e5;
+		}
+	}
+
+	&__stats-list {
+		display: flex;
+		margin: 10px 0 15px 0;
+		font-size: 14px;
+		line-height: 16px;
+		color: $c__gray;
+	}
+
+	&__stats-item {
+		margin-right: 10px;
+	}
+
+	&__text {
+		margin: 10px 0 20px 0;
+	}
+
+	&__link {
+		font-weight: 700;
+		cursor: pointer;
+		color: $c__black;
+		border-bottom: 1px dashed $c__black;
+
+		&:hover,
+		&:focus {
+			border-bottom: 1px solid $c__black;
+		}
+	}
+
+	&-paginator {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 30px 0 60px 0;
+
+		@include media(0, 670px) {
+			margin: 10px 0 0 0;
+		}
+
+		&__list {
+			display: flex;
+		}
+
+		&__item:not(:last-child) {
+			margin: 0 10px 0 0;
+		}
+
+		&__link {
+			font-size: 18px;
+			line-height: 21px;
+			font-weight: 700;
+			cursor: pointer;
+			color: $c__gray--light;
+			transition: $transition ease-in-out;
+
+			&:hover,
+			&:focus {
+				color: $c__black;
+			}
+		}
+	}
+}

@@ -1,0 +1,90 @@
+<div class="popup popup--pass">
+	<form class="popup__form popup__form--pass">
+		<div class="popup__coll">
+			<label class="popup__label">
+				<span class="popup__text">Old password<span class="popup__star">*</span></span>
+				<input class="popup__input popup__input--pass" type="email" name="Old password">
+			</label>
+		</div>
+		<div class="popup__coll">
+			<label class="popup__label">
+				<span class="popup__text">New password<span class="popup__star">*</span></span>
+				<input class="popup__input " type="email" name="New password">
+			</label>
+		</div>
+		<div class="popup__coll">
+			<label class="popup__label">
+				<span class="popup__text">Repeat new password<span class="popup__star">*</span></span>
+				<input class="popup__input" type="email" name="Repeat new password">
+			</label>
+		</div>
+		@@include('button/index.html', {
+		"type": "button",
+		"text": "Change password",
+		"class": "popup__button",
+		"disabled": "no"
+		})
+		<button class="popup__close popup__close--pass" aria-label="Button close popup"><img class="popup__close--img"
+				src="/static/images/button-close.svg"></button>
+	</form>
+</div>
+
+
+<div class="popup popup--data">
+	<form class="popup__form popup__form--data">
+		<div class="popup__coll">
+			<label class="popup__label">
+				<span class="popup__text">Email</span>
+				<input class="popup__input popup__input--data" type="email" name="email">
+			</label>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Name</span>
+					<input class="popup__input" type="text" name="Name">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Surname</span>
+					<input class="popup__input" type="text" name="Surname">
+				</label>
+			</div>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Location</span>
+					<input class="popup__input" type="text" name="Loaction">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Age</span>
+					<input class="popup__input" type="text" name="Age">
+				</label>
+			</div>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50 popup__coll-50--file">
+				<label class="popup__label popup__label--file">
+					<span class="popup__text">Profile picture</span>
+					<input class="popup__input file_js" type="file" name="avatar" accept=".png, .jpg, .jpeg">
+				</label>
+				<div class="popup__file popup-file">
+					<img class="popup-file__img" src="/static/images/file-upload.svg" alt="file icon">
+					<span class="popup-file__text fileText_js">file-name.png</span>
+				</div>
+			</div>
+		</div>
+		@@include('button/index.html', {
+		"type": "button",
+		"text": "Submit changes",
+		"class": "popup__button",
+		"disabled": "no"
+		})
+		<button class="popup__close popup__close--data" aria-label="Button close popup"><img class="popup__close--img"
+				src="/static/images/button-close.svg"></button>
+	</form>
+</div>

@@ -1,0 +1,133 @@
+<section class="calc">
+	<div class="container">
+		<div class="calc__content">
+			<h1 class="calc__title title-one">My blog</h1>
+			<form class="calc__form calc-form">
+				<div class="calc-form__top">
+					<fieldset class="calc-form__fieldset calc-form__fieldset--tags">
+						<legend class="calc-form__title">Tags</legend>
+						<div class="calc-form__box">
+						<label class="calc-form__check-label">
+							<input class="calc-form__input  hidden" type="checkbox" name="tag blue" checked>
+							<span class="calc-form__check calc-form__check--2176FF"></span>
+						</label>
+						<label class="calc-form__check-label">
+							<input class="calc-form__input hidden" type="checkbox" name="tag blue white">
+							<span class="calc-form__check calc-form__check--33A1FD"></span>
+						</label>
+						<label class="calc-form__check-label">
+							<input class="calc-form__input hidden" type="checkbox" name="tag yellow">
+							<span class="calc-form__check calc-form__check--FDCA40"></span>
+						</label>
+						<label class="calc-form__check-label">
+							<input class="calc-form__input hidden" type="checkbox" name="tag turquoise">
+							<span class="calc-form__check calc-form__check--57E2E5"></span>
+						</label>
+						<label class="calc-form__check-label">
+							<input class="calc-form__input hidden" type="checkbox" name="tag orange">
+							<span class="calc-form__check calc-form__check--F79824"></span>
+						</label>
+						<label class="calc-form__check-label">
+							<input class="calc-form__input hidden" type="checkbox" name="tag pink" checked>
+							<span class="calc-form__check calc-form__check--E08DAC"></span>
+						</label>
+						<label class="calc-form__check-label">
+							<input class="calc-form__input hidden" type="checkbox" name="tag dark blue">
+							<span class="calc-form__check calc-form__check--6A7FDB"></span>
+						</label>
+						<label class="calc-form__check-label">
+							<input class="calc-form__input hidden" type="checkbox" name="tag green">
+							<span class="calc-form__check calc-form__check--45CB85"></span>
+						</label>
+						</div>
+					</fieldset>
+					<fieldset class="calc-form__fieldset calc-form__fieldset--views">
+						<legend class="calc-form__title">Views</legend>
+						<label class="calc-form__radio-label">
+							<input class="calc-form__input  hidden" type="radio" name="views">
+							<span class="calc-form__radio"></span>
+							<span class="calc-form__radio-text text">100-500</span>
+						</label>
+						<label class="calc-form__radio-label">
+							<input class="calc-form__input  hidden" type="radio" name="views" checked>
+							<span class="calc-form__radio"></span>
+							<span class="calc-form__radio-text text">500-1000</span>
+						</label>
+						<label class="calc-form__radio-label">
+							<input class="calc-form__input  hidden" type="radio" name="views">
+							<span class="calc-form__radio"></span>
+							<span class="calc-form__radio-text text">1000-2000</span>
+					</label>
+				</fieldset>
+				<fieldset class="calc-form__fieldset calc-form__fieldset--comments">
+					<legend class="calc-form__title">Comments</legend>
+					<label class="calc-form__check-label">
+						<input class="calc-form__input  hidden" type="checkbox" name="comments 0" checked>
+						<span class="calc-form__check"></span>
+						<span class="calc-form__check-text text">0</span>
+					</label>
+					<label class="calc-form__check-label">
+						<input class="calc-form__input hidden" type="checkbox" name="comments 0-1">
+						<span class="calc-form__check"></span>
+						<span class="calc-form__check-text text">0-1</span>
+					</label>
+					<label class="calc-form__check-label">
+						<input class="calc-form__input hidden" type="checkbox" name="comments 1-50">
+						<span class="calc-form__check"></span>
+						<span class="calc-form__check-text text">1-50</span>
+					</label>
+				</fieldset>
+					<fieldset class="calc-form__fieldset calc-form__fieldset--show">
+						<legend class="calc-form__title">How show?</legend>
+						<label class="calc-form__radio-label">
+							<input class="calc-form__input  hidden" type="radio" name="show" checked>
+							<span class="calc-form__radio"></span>
+							<span class="calc-form__radio-text text">show 5</span>
+						</label>
+						<label class="calc-form__radio-label">
+							<input class="calc-form__input  hidden" type="radio" name="show">
+							<span class="calc-form__radio"></span>
+							<span class="calc-form__radio-text text">show 10</span>
+						</label>
+					</fieldset>
+					<fieldset class="calc-form__fieldset calc-form__fieldset--sort">
+						<legend class="calc-form__title">Sort by</legend>
+						<label class="calc-form__radio-label">
+							<input class="calc-form__input  hidden" type="radio" name="sort" checked>
+							<span class="calc-form__radio"></span>
+							<span class="calc-form__radio-text text">date</span>
+						</label>
+						<label class="calc-form__radio-label">
+							<input class="calc-form__input  hidden" type="radio" name="sort">
+							<span class="calc-form__radio"></span>
+							<span class="calc-form__radio-text text">title</span>
+						</label>
+						<label class="calc-form__radio-label">
+							<input class="calc-form__input  hidden" type="radio" name="sort">
+							<span class="calc-form__radio"></span>
+							<span class="calc-form__radio-text text">views</span>
+						</label>
+					</fieldset>
+					<fieldset class="calc-form__fieldset calc-form__fieldset--reset">
+						<legend class="calc-form__title calc-form__title--reset">Reset form</legend>
+						@@include('button/index.html', {
+							"type": "button",
+							"text": "Reset",
+							"class": "calc-form__button",
+							"disabled": "no"
+						})
+					</fieldset>
+				</div>
+				<div class="calc__search calc-search">
+						<input class="calc-search__input" type="text" name="title">
+						@@include('button/index.html', {
+							"type": "button",
+							"text": "Search",
+							"class": "calc-search__button",
+							"disabled": "no"
+						})	
+				</div>
+			</form>
+		</div>
+	</div>
+</section>

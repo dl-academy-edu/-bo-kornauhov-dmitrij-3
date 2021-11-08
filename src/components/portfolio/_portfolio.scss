@@ -1,0 +1,104 @@
+.portfolio {
+	background: #f6f6f6;
+	&__content {
+		padding: 60px 0;
+
+		@include media(0, $m_mob) {
+			padding: 40px 0;
+		}
+	}
+
+	&__title {
+		text-align: center;
+		margin: 0 0 50px 0;
+
+		@include media(0, $m_mob) {
+			margin: 0 0 30px 0;
+		}
+	}
+
+	&__banner {
+		position: relative;
+	}
+
+	&__btn {
+		position: absolute;
+		bottom: 50%;
+		cursor: pointer;
+		background: transparent;
+		transition: $transition ease-in-out;
+
+		&--left {
+			left: 15px;
+		}
+
+		&--right {
+			right: 15px;
+			transform: rotate(180deg);
+		}
+
+		&:hover,
+		&:focus {
+			opacity: 0.4;
+		}
+
+		&:active {
+			opacity: 0.2;
+		}
+	}
+
+	&__bottom {
+		background: rgba(7, 7, 7, 0.85);
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		padding: 31px 0;
+		color: $c__white;
+
+		@include media(0, $m_mob) {
+			padding: 20px 0;
+		}
+	}
+
+	&__img,
+	picture {
+		width: 100%;
+	}
+}
+
+.portfolio-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+
+	&__link {
+		font-size: 18px;
+		line-height: 21px;
+		font-weight: 500;
+		margin: 0 0 16px 0;
+		cursor: pointer;
+		border-bottom: 1px dashed $c__white;
+		transition: $transition ease-in-out;
+
+		@include media(0, 500px) {
+			max-width: 159px;
+		}
+
+		&:hover,
+		&:focus {
+			border-bottom: 1px solid $c__white;
+		}
+	}
+
+	&__descrip {
+		font-size: 14px;
+		line-height: 16px;
+		max-width: 410px;
+		font-weight: 500;
+
+		@include media(0, 500px) {
+			max-width: 250px;
+		}
+	}
+}

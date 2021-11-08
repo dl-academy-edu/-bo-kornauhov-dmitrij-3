@@ -1,0 +1,139 @@
+// Подключение компонентов
+@import "./normalize";
+@import "./button/button";
+@import "./header/header";
+@import "./first-screen/first-screen";
+@import "./about/about";
+@import "./skills/skills";
+@import "./portfolio/portfolio";
+@import "./contacts/contacts";
+@import "./calc-blog/calc-blog";
+@import "./blog/blog";
+@import "./arrow-button/arrow-button";
+@import "./button-top/button-top";
+@import "./profile/profile";
+@import "./menu/menu";
+@import "./popup/popup";
+// Подключение компонентов
+
+.title {
+	&-one {
+		font-family: "Gilroy", "Arial", sans-serif;
+		font-size: 47px;
+		line-height: 57px;
+		color: $c__black;
+	}
+
+	&-two {
+		font-family: "Gilroy", "Arial", sans-serif;
+		font-size: 34px;
+		line-height: 41px;
+		color: $c__black;
+	}
+}
+
+.text {
+	font-family: "Gilroy", "Arial", sans-serif;
+	font-size: 18px;
+	line-height: 21px;
+}
+
+.container {
+	max-width: 1020px;
+	margin: 0 auto;
+
+	@media (min-width: 1000px) {
+		padding: 0 10px;
+	}
+
+	@include media($m_tab, $m_pc) {
+		padding: 0 60px;
+	}
+
+	@include media(0, $m_tab) {
+		padding: 0 20px;
+	}
+}
+
+body {
+	font-family: "Gilroy", "Arial", sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	padding: 0;
+	margin: 0;
+}
+
+img {
+	max-width: 100%;
+	line-height: 0;
+}
+
+ul,
+p,
+button {
+	padding: 0;
+	margin: 0;
+}
+
+button {
+	border: none;
+	border-radius: 0;
+	margin: 0;
+	padding: 0;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: $c__white;
+}
+
+fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+.hidden {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+}
+
+.body_scroll {
+	overflow: hidden;
+}
+
+.open_js {
+	display: block;
+}
+
+.open_js-flex {
+	display: flex;
+}
+
+.disabled {
+	display: none;
+}

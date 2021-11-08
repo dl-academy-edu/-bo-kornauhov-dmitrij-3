@@ -1,0 +1,46 @@
+@import "./mixin";
+@import "./colors";
+@import "./vars";
+
+.header {
+	&__content {
+		padding: 33px 0;
+		display: flex;
+		border-bottom: solid 1px $c__gray;
+
+		@include media(0, $m_mob--md) {
+			display: none;
+		}
+	}
+
+	&__nav {
+		margin-left: auto;
+	}
+
+	&__menu {
+		display: flex;
+	}
+
+	&__item {
+		margin-left: 20px;
+	}
+
+	&__link {
+		font-size: 18px;
+		line-height: 22px;
+		font-weight: 700;
+		color: $c__gray;
+		cursor: pointer;
+		outline: none;
+		transition: $transition ease-in-out;
+
+		@include media(0, $m_mob--md) {
+			display: none;
+		}
+
+		&:hover,
+		&:focus {
+			color: $c__black;
+		}
+	}
+}
