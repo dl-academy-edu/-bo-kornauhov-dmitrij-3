@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link href="/common.css" rel="stylesheet" />
+	<link href="/style.css" rel="stylesheet" />
+	<link href="/static/fonts/font-name.css" rel="stylesheet">
+	<title>Blog</title>
+</head>
+
+<body>
+	<header class="header">
+  <div class="container">
+    <div class="header__content">
+      <a class="header__link logo_js" href="/">Home</a>
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li class="header__item"><a class="header__link" href="/pages/blog/index.html">My blog</a></li>
+          <li class="header__item"><a class="header__link popup__open-login">Sign in</a></li>
+          <li class="header__item"><a class="header__link popup__open-register">Register</a></li>
+          <li class="header__item"><a class="header__link" href="/pages/profile/index.html">My profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+	<button class="menu__open menu__open--js @@class"><img class="menu__img" src="/static/images/menu-open.svg"
+		alt="Menu Open Button"></button>
+<div class="menu">
+	<ul class="menu__list">
+		<li class="menu__item"><a class="menu__link menu-focus" href="/">Home</a></li>
+		<li class="menu__item"><a class="menu__link" href="/pages/blog/index.html">My blog</a></li>
+		<li class="menu__item"><a class="menu__link menu__link--sign-js">Sign in</a></li>
+		<li class="menu__item"><a class="menu__link menu__link--register-js">Register</a></li>
+	</ul>
+	<button class="menu__close menu__close--js"><img class="menu__img" src="/static/images/menu-close.svg"
+			alt="Menu Close button"></button>
+</div>
+	<main>
+		<section class="calc">
+	<div class="container">
+		<div class="calc__content">
+			<h1 class="calc__title title-one">My blog</h1>
+			<form class="calc__form calc-form">
+				<div class="calc-form__top">
+					<fieldset class="calc-form__fieldset calc-form__fieldset--tags">
+						<legend class="calc-form__title">Tags</legend>
+						<div class="calc-form__box">
+						<label class="calc-form__check-label">
+							<input class="calc-form__input  hidden" type="checkbox" name="tag blue" checked>
+							<span class="calc-form__check calc-form__check--2176FF"></span>
+						</label>
+						<label class="calc-form__check-label">
+							<input class="calc-form__input hidden" type="checkbox" name="tag blue white">
+							<span class="calc-form__check calc-form__check--33A1FD"></span>
+						</label>
+						<label class="calc-form__check-label">
+							<input class="calc-form__input hidden" type="checkbox" name="tag yellow">
+							<span class="calc-form__check calc-form__check--FDCA40"></span>
+						</label>
+						<label class="calc-form__check-label">
+							<input class="calc-form__input hidden" type="checkbox" name="tag turquoise">
+							<span class="calc-form__check calc-form__check--57E2E5"></span>
+						</label>
+						<label class="calc-form__check-label">
+							<input class="calc-form__input hidden" type="checkbox" name="tag orange">
+							<span class="calc-form__check calc-form__check--F79824"></span>
+						</label>
+						<label class="calc-form__check-label">
+							<input class="calc-form__input hidden" type="checkbox" name="tag pink" checked>
+							<span class="calc-form__check calc-form__check--E08DAC"></span>
+						</label>
+						<label class="calc-form__check-label">
+							<input class="calc-form__input hidden" type="checkbox" name="tag dark blue">
+							<span class="calc-form__check calc-form__check--6A7FDB"></span>
+						</label>
+						<label class="calc-form__check-label">
+							<input class="calc-form__input hidden" type="checkbox" name="tag green">
+							<span class="calc-form__check calc-form__check--45CB85"></span>
+						</label>
+						</div>
+					</fieldset>
+					<fieldset class="calc-form__fieldset calc-form__fieldset--views">
+						<legend class="calc-form__title">Views</legend>
+						<label class="calc-form__radio-label">
+							<input class="calc-form__input  hidden" type="radio" name="views">
+							<span class="calc-form__radio"></span>
+							<span class="calc-form__radio-text text">100-500</span>
+						</label>
+						<label class="calc-form__radio-label">
+							<input class="calc-form__input  hidden" type="radio" name="views" checked>
+							<span class="calc-form__radio"></span>
+							<span class="calc-form__radio-text text">500-1000</span>
+						</label>
+						<label class="calc-form__radio-label">
+							<input class="calc-form__input  hidden" type="radio" name="views">
+							<span class="calc-form__radio"></span>
+							<span class="calc-form__radio-text text">1000-2000</span>
+					</label>
+				</fieldset>
+				<fieldset class="calc-form__fieldset calc-form__fieldset--comments">
+					<legend class="calc-form__title">Comments</legend>
+					<label class="calc-form__check-label">
+						<input class="calc-form__input  hidden" type="checkbox" name="comments 0" checked>
+						<span class="calc-form__check"></span>
+						<span class="calc-form__check-text text">0</span>
+					</label>
+					<label class="calc-form__check-label">
+						<input class="calc-form__input hidden" type="checkbox" name="comments 0-1">
+						<span class="calc-form__check"></span>
+						<span class="calc-form__check-text text">0-1</span>
+					</label>
+					<label class="calc-form__check-label">
+						<input class="calc-form__input hidden" type="checkbox" name="comments 1-50">
+						<span class="calc-form__check"></span>
+						<span class="calc-form__check-text text">1-50</span>
+					</label>
+				</fieldset>
+					<fieldset class="calc-form__fieldset calc-form__fieldset--show">
+						<legend class="calc-form__title">How show?</legend>
+						<label class="calc-form__radio-label">
+							<input class="calc-form__input  hidden" type="radio" name="show" checked>
+							<span class="calc-form__radio"></span>
+							<span class="calc-form__radio-text text">show 5</span>
+						</label>
+						<label class="calc-form__radio-label">
+							<input class="calc-form__input  hidden" type="radio" name="show">
+							<span class="calc-form__radio"></span>
+							<span class="calc-form__radio-text text">show 10</span>
+						</label>
+					</fieldset>
+					<fieldset class="calc-form__fieldset calc-form__fieldset--sort">
+						<legend class="calc-form__title">Sort by</legend>
+						<label class="calc-form__radio-label">
+							<input class="calc-form__input  hidden" type="radio" name="sort" checked>
+							<span class="calc-form__radio"></span>
+							<span class="calc-form__radio-text text">date</span>
+						</label>
+						<label class="calc-form__radio-label">
+							<input class="calc-form__input  hidden" type="radio" name="sort">
+							<span class="calc-form__radio"></span>
+							<span class="calc-form__radio-text text">title</span>
+						</label>
+						<label class="calc-form__radio-label">
+							<input class="calc-form__input  hidden" type="radio" name="sort">
+							<span class="calc-form__radio"></span>
+							<span class="calc-form__radio-text text">views</span>
+						</label>
+					</fieldset>
+					<fieldset class="calc-form__fieldset calc-form__fieldset--reset">
+						<legend class="calc-form__title calc-form__title--reset">Reset form</legend>
+						
+<button class="button calc-form__button">Reset</button>
+
+
+
+
+
+
+
+					</fieldset>
+				</div>
+				<div class="calc__search calc-search">
+						<input class="calc-search__input" type="text" name="title">
+						
+<button class="button calc-search__button">Search</button>
+
+
+
+
+
+
+	
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+		<section class="blog">
+	<div class="container">
+		<div class="blog__content">
+			<ul class="blog__list">
+				<li class="blog__item">
+					<picture>
+						<source srcset="/static/images/blog-1-mobile.jpg, /static/images/blog-1-mobile-retina.jpg 2x"
+							media="(max-width: 670px)">
+						<source srcset="/static/images/blog-1-tablet.jpg, /static/images/blog-1-tablet-retina.jpg 2x"
+							media="(min-width: 671px) and (max-width: 799px)">
+						<source srcset="/static/images/blog-1.jpg, /static/images/blog-1-retina.jpg 2x" media="(min-width: 800px)">
+						<img class="blog__img" src="/static/images/blog-1.jpg" alt="blog 1">
+					</picture>
+					<div class="blog__info">
+						<div class="blog__tag-box">
+							<span class="blog__tag-item blog__tag-item--F79824"></span>
+							<span class="blog__tag-item blog__tag-item--6A7FDB"></span>
+						</div>
+						<ul class="blog__stats-list">
+							<li class="blog__stats-item">20.01.2020</li>
+							<li class="blog__stats-item">223 views</li>
+							<li class="blog__stats-item">97 comments</li>
+						</ul>
+						<h2 class="blog__title">This is my new dog.</h2>
+						<p class="blog__text">Duis sit odio dui pretium suspendisse malesuada sit leo in. Massa nec eget etiam tellus ac. Sodales nibh pellentesque
+						donec eu ultrices tortor condimentum massa.</p>
+						<a class="blog__link text">Go to this post</a>
+					</div>
+				</li>
+				<li class="blog__item">
+					<picture>
+						<source srcset="/static/images/blog-2-mobile.jpg, /static/images/blog-2-mobile-retina.jpg 2x"
+							media="(max-width: 670px)">
+						<source srcset="/static/images/blog-2-tablet.jpg, /static/images/blog-2-tablet-retina.jpg 2x"
+							media="(min-width: 671px) and (max-width: 799px)">
+						<source srcset="/static/images/blog-2.jpg, /static/images/blog-2-retina.jpg 2x" media="(min-width: 800px)">
+						<img class="blog__img" src="/static/images/blog-2.jpg" alt="blog 2">
+					</picture>
+					<div class="blog__info">
+						<div class="blog__tag-box">
+							<span class="blog__tag-item blog__tag-item--45CB85"></span>
+							<span class="blog__tag-item blog__tag-item--33A1FD"></span>
+						</div>
+						<ul class="blog__stats-list">
+							<li class="blog__stats-item">17.01.2020</li>
+							<li class="blog__stats-item">12 views</li>
+							<li class="blog__stats-item">0 comments</li>
+						</ul>
+						<h2 class="blog__title">Why do roosters scream in the morning?</h2>
+						<p class="blog__text">Erat nunc parturient feugiat egestas adipiscing erat eu. Non neque mi volutpat et lectus.</p>
+						<a class="blog__link text">Go to this post</a>
+					</div>
+				</li>
+				<li class="blog__item">
+					<picture>
+						<source srcset="/static/images/blog-3-mobile.jpg, /static/images/blog-3-mobile-retina.jpg 2x"
+							media="(max-width: 670px)">
+						<source srcset="/static/images/blog-3-tablet.jpg, /static/images/blog-3-tablet-retina.jpg 2x"
+							media="(min-width: 671px) and (max-width: 799px)">
+						<source srcset="/static/images/blog-3.jpg, /static/images/blog-3-retina.jpg 2x" media="(min-width: 800px)">
+						<img class="blog__img" src="/static/images/blog-3.jpg" alt="blog 3">
+					</picture>
+					<div class="blog__info">
+						<div class="blog__tag-box">
+							<span class="blog__tag-item blog__tag-item--2176FF"></span>
+						</div>
+						<ul class="blog__stats-list">
+							<li class="blog__stats-item">17.01.2020</li>
+							<li class="blog__stats-item">337 views</li>
+							<li class="blog__stats-item">48 comments</li>
+						</ul>
+						<h2 class="blog__title">Kangaroo. Start.</h2>
+						<p class="blog__text">At leo at nisl tortor egestas. Mauris luctus est luctus massa tellus erat gravida. Eget aenean eget diam habitant risus.
+						Dapibus et, nec platea felis. Facilisi ut leo arcu, semper id pellentesque quisque ultrices etiam.</p>
+						<a class="blog__link text">Go to this post</a>
+					</div>
+				</li>
+				<li class="blog__item">
+					<picture>
+						<source srcset="/static/images/blog-4-mobile.jpg, /static/images/blog-4-mobile-retina.jpg 2x"
+							media="(max-width: 670px)">
+						<source srcset="/static/images/blog-4-tablet.jpg, /static/images/blog-4-tablet-retina.jpg 2x"
+							media="(min-width: 671px) and (max-width: 799px)">
+						<source srcset="/static/images/blog-4.jpg, /static/images/blog-4-retina.jpg 2x" media="(min-width: 800px)">
+						<img class="blog__img" src="/static/images/blog-4.jpg" alt="blog 4">
+					</picture>
+					<div class="blog__info">
+						<div class="blog__tag-box">
+							<span class="blog__tag-item blog__tag-item--F79824"></span>
+							<span class="blog__tag-item blog__tag-item--45CB85"></span>
+							<span class="blog__tag-item blog__tag-item--6A7FDB"></span>
+						</div>
+						<ul class="blog__stats-list">
+							<li class="blog__stats-item">15.01.2020</li>
+							<li class="blog__stats-item">222 views</li>
+							<li class="blog__stats-item">14 comments</li>
+						</ul>
+						<h2 class="blog__title">Met a duckling at the pond.</h2>
+						<p class="blog__text">Nulla tempus mauris sed vel bibendum. Felis urna suspendisse amet, laoreet sagittis. Semper pellentesque condimentum
+						vitae morbi in dui. Et in et diam massa.</p>
+						<a class="blog__link text">Go to this post</a>
+					</div>
+				</li>
+				<li class="blog__item">
+					<picture>
+						<source srcset="/static/images/blog-5-mobile.jpg, /static/images/blog-5-mobile-retina.jpg 2x"
+							media="(max-width: 670px)">
+						<source srcset="/static/images/blog-5-tablet.jpg, /static/images/blog-5-tablet-retina.jpg 2x"
+							media="(min-width: 671px) and (max-width: 799px)">
+						<source srcset="/static/images/blog-5.jpg, /static/images/blog-5-retina.jpg 2x" media="(min-width: 800px)">
+						<img class="blog__img" src="/static/images/blog-5.jpg" alt="blog 5">
+					</picture>
+					<div class="blog__info">
+						<div class="blog__tag-box">
+							<span class="blog__tag-item blog__tag-item--E08DAC"></span>
+							<span class="blog__tag-item blog__tag-item--57E2E5"></span>
+						</div>
+						<ul class="blog__stats-list">
+							<li class="blog__stats-item">20.01.2020</li>
+							<li class="blog__stats-item">122 views</li>
+							<li class="blog__stats-item">23 comments</li>
+						</ul>
+						<h2 class="blog__title">Can dogs also be friends?</h2>
+						<p class="blog__text">Eu, libero aliquet nibh turpis quis nulla et ullamcorper purus. Consequat egestas sed sagittis morbi lacus. Consectetur
+						et justo, sagittis vitae mi faucibus urna, eu.</p>
+						<a class="blog__link text">Go to this post</a>
+					</div>
+				</li>
+			</ul>
+				<div class="blog__paginator blog-paginator">
+					
+
+<button class="slider__button arrow-button arrow-button--left" aria-label="@@label"><img class="arrow-button__img" src="/static/images/btn-arrow.svg" alt="Toggle Left"></button>
+
+
+
+
+
+
+
+					<ul class="blog-paginator__list">
+						<li class="blog-paginator__item"><a class="blog-paginator__link ">1</a></li>
+						<li class="blog-paginator__item"><a class="blog-paginator__link text">2</a></li>
+						<li class="blog-paginator__item"><a class="blog-paginator__link text">3</a></li>
+						<li class="blog-paginator__item"><a class="blog-paginator__link text">4</a></li>
+						<li class="blog-paginator__item"><a class="blog-paginator__link text">5</a></li>
+						<li class="blog-paginator__item"><a class="blog-paginator__link text">6</a></li>
+						<li class="blog-paginator__item"><a class="blog-paginator__link text">7</a></li>
+						<li class="blog-paginator__item"><a class="blog-paginator__link text">8</a></li>
+					</ul>
+					
+
+
+
+
+
+<button class="slider__button arrow-button arrow-button--right" aria-label="@@label"><img class="arrow-button__img" src="/static/images/btn-arrow.svg" alt="Toggle Right"></button>
+
+
+
+				</div>
+		</div>
+	</div>
+</section>
+	</main>
+	<footer class="contacts contacts__bg">
+	<div class="container">
+		<div class="contacts__content">
+			<h2 class="contacts__title title-two">Contacts</h2>
+			<p class="contacts__subtitle">Want to know more or just chat?
+				You are welcome!</p>
+			
+<button class="button contacts__button">Send message</button>
+
+
+
+
+
+
+
+			<ul class="contacts__list">
+				<li class="contacts__item">
+					
+
+
+
+
+
+<a class="link contacts__link" href="#">Instagram</a>
+
+
+				</li>
+				<li class="contacts__item">
+					
+
+
+
+
+
+<a class="link contacts__link" href="#">Vk</a>
+
+
+				</li>
+				<li class="contacts__item">
+					
+
+
+
+
+
+<a class="link contacts__link" href="#">Telegram</a>
+
+
+				</li>
+				<li class="contacts__item">
+					
+
+
+
+
+
+<a class="link contacts__link" href="#">Mail</a>
+
+
+				</li>
+				<li class="contacts__item">
+					
+
+
+
+
+
+<a class="link contacts__link" href="#">GitHub</a>
+
+
+				</li>
+				<li class="contacts__item">
+					
+
+
+
+
+
+<a class="link contacts__link" href="#">Phone</a>
+
+
+				</li>
+			</ul>
+			<div class="contacts-design contacts__design">
+				<span class="contacts-design__text">Design by </span>
+				<a class="contacts-design__link">DL Academy</a>
+			</div>
+			<span class="contacts__text">Program code from Antonina</span>
+		</div>
+	</div>
+</footer>
+	<button class="button__top scroll-button"><img class="button__top--img" src="/static/images/btn-arrow.svg"
+		alt="button top"></button>
+	<div class="popup popup--login">
+	<form class="popup__form popup__form--login">
+		<label class="popup__label">
+			<span class="popup__text">Email<span class="popup__star">*</span></span>
+			<input class="popup__input popup__focus-js" type="email" name="email">
+		</label>
+		<label class="popup__label text">
+			<span class="popup__text">Password<span class="popup__star">*</span></span>
+			<input class="popup__input" type="email" name="email">
+		</label>
+		
+<button class="button popup__button">Log in</button>
+
+
+
+
+
+
+
+		<button class="popup__close popup__close--login" aria-label="Button close popup"><img class="popup__close--img"
+				src="/static/images/button-close.svg"></button>
+	</form>
+</div>
+
+<div class="popup popup--register">
+	<form class="popup__form popup__form--register">
+		<div class="popup__coll">
+			<label class="popup__label">
+				<span class="popup__text">Email<span class="popup__star">*</span></span>
+				<input class="popup__input popup__input--register" type="email" name="email">
+			</label>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Name<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Name">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Surname<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Surname">
+				</label>
+			</div>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Password<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Password">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Repeat password<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Repeat password">
+				</label>
+			</div>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Location<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Loaction">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Age<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Age">
+				</label>
+			</div>
+		</div>
+		<label class="popup__label popup__label--checkbox">
+			<input class="popup__checkbox hidden" type="checkbox" name="accept" value="yes">
+			<span class="popup__checkbox-checker"></span>
+			<span class="popup__checkbox-text">Clicking on the button, you consent to the processing of your personal
+				data.</span>
+		</label>
+		
+<button class="button popup__button">Sign up</button>
+
+
+
+
+
+
+
+		<button class="popup__close popup__close--register" aria-label="Button close popup"><img class="popup__close--img"
+				src="/static/images/button-close.svg"></button>
+	</form>
+</div>
+
+<div class="popup popup--send">
+	<form class="popup__form popup__form--send">
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">What is your name?<span class="popup__star">*</span></span>
+					<input class="popup__input popup__input--send" type="text" name="What is your name?">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Message subject<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Message subject">
+				</label>
+			</div>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Your Email<span class="popup__star">*</span></span>
+					<input class="popup__input" type="email" name="Your Email">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Your mobile phone<span class="popup__star">*</span></span>
+					<input class="popup__input" type="tel" name="Your mobile phone">
+				</label>
+			</div>
+		</div>
+		<div class="popup__coll">
+			<label class="popup__label">
+				<span class="popup__text">What do you want to discuss with me?</span>
+				<textarea class="popup__textarea" type="text" name="textarea text"></textarea>
+			</label>
+		</div>
+		<label class="popup__label popup__label--checkbox">
+			<input class="popup__checkbox hidden" type="checkbox" name="accept" value="yes">
+			<span class="popup__checkbox-checker"></span>
+			<span class="popup__checkbox-text">Clicking on the button, you consent to the processing of your personal
+				data.</span>
+		</label>
+		
+<button class="button popup__button">Send</button>
+
+
+
+
+
+
+
+		<button class="popup__close popup__close--send" aria-label="Button close popup"><img class="popup__close--img"
+				src="/static/images/button-close.svg"></button>
+	</form>
+</div>
+	<script src="/static/js/main.js"></script>
+	<script src="scripts.js"></script>
+</body>
+
+</html>

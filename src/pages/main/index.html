@@ -12,7 +12,9 @@
 
 <body>
   @@include('header/index.html')
-  @@include('menu/index.html')
+  @@include('menu/index.html',{
+  "class": "menu-open"
+  })
   <main>
     @@include('first-screen/index.html')
     @@include('about/index.html')
@@ -22,6 +24,7 @@
   @@include('contacts/index.html')
   @@include('button-top/index.html')
   @@include('popup/main.html')
+  <script src="/static/js/main.js"></script>
   <script src="scripts.js"></script>
 </body>
 

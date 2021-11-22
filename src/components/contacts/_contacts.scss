@@ -3,6 +3,10 @@
 @import "./vars";
 
 .contacts {
+	&__bg {
+	background: $c__gray-white;
+	}
+
 	&__content {
 		padding: 60px 0;
 		display: flex;

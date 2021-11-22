@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="/common.css" rel="stylesheet" />
+  <link href="/style.css" rel="stylesheet" />
+  <link href="/static/fonts/font-name.css" rel="stylesheet">
+  <title>Main</title>
+</head>
+
+<body>
+  <header class="header">
+  <div class="container">
+    <div class="header__content">
+      <a class="header__link logo_js" href="/">Home</a>
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li class="header__item"><a class="header__link" href="/pages/blog/index.html">My blog</a></li>
+          <li class="header__item"><a class="header__link popup__open-login">Sign in</a></li>
+          <li class="header__item"><a class="header__link popup__open-register">Register</a></li>
+          <li class="header__item"><a class="header__link" href="/pages/profile/index.html">My profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+  <button class="menu__open menu__open--js menu-open"><img class="menu__img" src="/static/images/menu-open.svg"
+		alt="Menu Open Button"></button>
+<div class="menu">
+	<ul class="menu__list">
+		<li class="menu__item"><a class="menu__link menu-focus" href="/">Home</a></li>
+		<li class="menu__item"><a class="menu__link" href="/pages/blog/index.html">My blog</a></li>
+		<li class="menu__item"><a class="menu__link menu__link--sign-js">Sign in</a></li>
+		<li class="menu__item"><a class="menu__link menu__link--register-js">Register</a></li>
+	</ul>
+	<button class="menu__close menu__close--js"><img class="menu__img" src="/static/images/menu-close.svg"
+			alt="Menu Close button"></button>
+</div>
+  <main>
+    <section class="first-screen">
+	<div class="container">
+		<div class="first-screen__content">
+			<div class="first-screen__info">
+				<h1 class="first-screen__title title-one">Antonina Antoninovna</h1>
+				<p class=" text first-screen__text">Future front-end developer
+					23 years old, Tolyatti</p>
+			</div>
+			<div class="first-screen__slider slider">
+				<div class="slider__wrapper">
+					<div class="slider__inner-wrapper">
+						<div class="slider__slide">
+							<picture>
+								<source srcset="/static/images/first-screen.jpg, /static/images/first-screen-retina.jpg 2x"
+									media="(min-width 769px)">
+								<source srcset="/static/images/first-screen-tab.jpg" media="(min-width: 375px) and (max-width: 768px)">
+								<source srcset="/static/images/first-screen-mob.jpg" media="(max-width: 374px)">
+								<img class="slider__img" src="/static/images/first-screen.jpg" alt="slider">
+							</picture>
+						</div>
+						<div class="slider__slide">
+							<picture>
+								<source srcset="/static/images/first-screen.jpg, /static/images/first-screen-retina.jpg 2x"
+									media="(min-width 769px)">
+								<source srcset="/static/images/first-screen-tab.jpg" media="(min-width: 375px) and (max-width: 768px)">
+								<source srcset="/static/images/first-screen-mob.jpg" media="(max-width: 374px)">
+								<img class="slider__img" src="/static/images/first-screen.jpg" alt="slider">
+							</picture>
+						</div>
+						<div class="slider__slide">
+							<picture>
+								<source srcset="/static/images/first-screen.jpg, /static/images/first-screen-retina.jpg 2x"
+									media="(min-width 769px)">
+								<source srcset="/static/images/first-screen-tab.jpg" media="(min-width: 375px) and (max-width: 768px)">
+								<source srcset="/static/images/first-screen-mob.jpg" media="(max-width: 374px)">
+								<img class="slider__img" src="/static/images/first-screen.jpg" alt="slider">
+							</picture>
+						</div>
+						<div class="slider__slide">
+							<picture>
+								<source srcset="/static/images/first-screen.jpg, /static/images/first-screen-retina.jpg 2x"
+									media="(min-width 769px)">
+								<source srcset="/static/images/first-screen-tab.jpg" media="(min-width: 375px) and (max-width: 768px)">
+								<source srcset="/static/images/first-screen-mob.jpg" media="(max-width: 374px)">
+								<img class="slider__img" src="/static/images/first-screen.jpg" alt="slider">
+							</picture>
+						</div>
+					</div>
+				</div>
+				<div class="slider__paginations">
+					
+
+<button class="slider__button slider__button--prev arrow-button arrow-button--left" aria-label="@@label"><img class="arrow-button__img" src="/static/images/btn-arrow.svg" alt="Toggle Left"></button>
+
+
+
+
+
+
+
+					<div class="slider__paginations-btn"></div>
+					
+
+
+
+
+
+<button class="slider__button slider__button--next arrow-button arrow-button--right" aria-label="@@label"><img class="arrow-button__img" src="/static/images/btn-arrow.svg" alt="Toggle Right"></button>
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+    <div class="about">
+	<div class="container">
+		<div class="about__content">
+			<h2 class="about__title title-two">About me</h2>
+			<div class="about__box">
+				<div class="about__cloud">
+				<p class="about__text text">Aliquam tortor molestie turpis est tristique. Congue diam orci amet quis semper ut. Vitae aenean nibh facilisis urna,
+				ultricies euismod nunc. Commodo fringilla sit hendrerit consequat. Vel ac elit vel sagittis.</p>
+				</div>
+				<div class="about__cloud">
+				<p class="about__text text">Tincidunt id quis pellentesque rutrum pretium. Egestas aliquam dictum ipsum nisl, sed pulvinar. Commodo elit sed a
+				fermentum non justo. Etiam platea consectetur.</p>
+				</div>
+				<div class="about__cloud">
+				<p class="about__text text">Quam ipsum odio tellus etiam aliquam dolor ut hendrerit. Felis risus nec vitae nunc ultricies placerat. Nullam nec felis
+				eu id dolor pellentesque tristique.</p>
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>
+    <section class="skills">
+	<div class="container">
+		<div class="skills__content">
+			<h2 class="skills__title title-two">Skills</h2>
+			<p class="skills__subtitle">I work in such programs as</p>
+			<ul class="skills__list">
+				<li class="skills__item">
+					<img class="skills__img" src="/static/images/skill-html.png" width="79" height="90" alt="Html 5">
+					<span class="skills__name">HTML 5</span>
+					<div class="skills__progress skills-progress">
+						<span class="skills-progress__interest">85%</span>
+						<div class="skills-progress__bar skills-progress__bar--html"></div>
+					</div>
+				</li>
+				<li class="skills__item">
+					<img class="skills__img" src="/static/images/skill-css.png" width="79" height="90" alt="Css/Scss">
+					<span class="skills__name">CSS/SCSS</span>
+					<div class="skills__progress skills-progress">
+						<span class="skills-progress__interest">55%</span>
+						<div class="skills-progress__bar skills-progress__bar--css"></div>
+					</div>
+				</li>
+				<li class="skills__item">
+					<img class="skills__img" src="/static/images/skill-script.png" width="68" height="90" alt="JavaScript">
+					<span class="skills__name">JavaScript</span>
+					<div class="skills__progress skills-progress">
+						<span class="skills-progress__interest">5%</span>
+						<div class="skills-progress__bar skills-progress__bar--script"></div>
+					</div>
+				</li>	
+				<li class="skills__item">
+					<img class="skills__img" src="/static/images/skill-git.png" width="90" height="90" alt="Git/Github">
+					<span class="skills__name">Git/Github</span>
+					<div class="skills__progress skills-progress">
+						<span class="skills-progress__interest">15%</span>
+						<div class="skills-progress__bar skills-progress__bar--git"></div>
+					</div>
+				</li>
+				<li class="skills__item">
+					<img class="skills__img" src="/static/images/skill-figma.png" width="60" height="90" alt="Figma">
+					<span class="skills__name">Figma</span>
+					<div class="skills__progress skills-progress">
+						<span class="skills-progress__interest">80%</span>
+						<div class="skills-progress__bar skills-progress__bar--figma"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+    <section class="portfolio">
+	<div class="container">
+		<div class="portfolio__content">
+			<h2 class="portfolio__title title-two">Portfolio</h2>
+			<div class="portfolio__banner">
+			<picture>
+				<source srcset="/static/images/portfolio.jpg, /static/images/portfolio-retina.jpg 2x" media="(min-width 769px)">
+				<source srcset="/static/images/portfolio-tab.jpg" media="(min-width: 500px) and (max-width: 768px)">
+				<source srcset="/static/images/portfolio-mob.jpg" media="(max-width: 499px)">
+				<img class="portfolio__img" src="static/images/portfolio.jpg" alt="portfolio">
+			</picture>
+			<button class="portfolio__btn portfolio__btn--left"><img class="portfolio__img" src="static/images/portfolio-arrow.svg" alt="arrow left"></button>
+			<button class="portfolio__btn portfolio__btn--right"><img class="portfolio__img" src="static/images/portfolio-arrow.svg" alt="arrow right"></button>
+			<div class="portfolio__bottom">
+				<div class="portfolio__info portfolio-info">
+					<a class="portfolio-info__link">Learning site for DL Academy courses</a>
+					<p class="portfolio-info__descrip">A simple multi-page static site. The design layout was in Figma. HTML and CSS were used. The site is responsive and
+					cross-browser, but without adding interactivity via JavaScript.</p>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</section>
+  </main>
+  <footer class="contacts @@class">
+	<div class="container">
+		<div class="contacts__content">
+			<h2 class="contacts__title title-two">Contacts</h2>
+			<p class="contacts__subtitle">Want to know more or just chat?
+				You are welcome!</p>
+			
+<button class="button contacts__button">Send message</button>
+
+
+
+
+
+
+
+			<ul class="contacts__list">
+				<li class="contacts__item">
+					
+
+
+
+
+
+<a class="link contacts__link" href="#">Instagram</a>
+
+
+				</li>
+				<li class="contacts__item">
+					
+
+
+
+
+
+<a class="link contacts__link" href="#">Vk</a>
+
+
+				</li>
+				<li class="contacts__item">
+					
+
+
+
+
+
+<a class="link contacts__link" href="#">Telegram</a>
+
+
+				</li>
+				<li class="contacts__item">
+					
+
+
+
+
+
+<a class="link contacts__link" href="#">Mail</a>
+
+
+				</li>
+				<li class="contacts__item">
+					
+
+
+
+
+
+<a class="link contacts__link" href="#">GitHub</a>
+
+
+				</li>
+				<li class="contacts__item">
+					
+
+
+
+
+
+<a class="link contacts__link" href="#">Phone</a>
+
+
+				</li>
+			</ul>
+			<div class="contacts-design contacts__design">
+				<span class="contacts-design__text">Design by </span>
+				<a class="contacts-design__link">DL Academy</a>
+			</div>
+			<span class="contacts__text">Program code from Antonina</span>
+		</div>
+	</div>
+</footer>
+  <button class="button__top scroll-button"><img class="button__top--img" src="/static/images/btn-arrow.svg"
+		alt="button top"></button>
+  <div class="popup popup--login">
+	<form class="popup__form popup__form--login">
+		<label class="popup__label">
+			<span class="popup__text">Email<span class="popup__star">*</span></span>
+			<input class="popup__input popup__focus-js" type="email" name="email">
+		</label>
+		<label class="popup__label text">
+			<span class="popup__text">Password<span class="popup__star">*</span></span>
+			<input class="popup__input" type="email" name="email">
+		</label>
+		
+<button class="button popup__button">Log in</button>
+
+
+
+
+
+
+
+		<button class="popup__close popup__close--login" aria-label="Button close popup"><img class="popup__close--img"
+				src="/static/images/button-close.svg"></button>
+	</form>
+</div>
+
+<div class="popup popup--register">
+	<form class="popup__form popup__form--register">
+		<div class="popup__coll">
+			<label class="popup__label">
+				<span class="popup__text">Email<span class="popup__star">*</span></span>
+				<input class="popup__input popup__input--register" type="email" name="email">
+			</label>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Name<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Name">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Surname<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Surname">
+				</label>
+			</div>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Password<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Password">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Repeat password<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Repeat password">
+				</label>
+			</div>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Location<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Loaction">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Age<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Age">
+				</label>
+			</div>
+		</div>
+		<label class="popup__label popup__label--checkbox">
+			<input class="popup__checkbox hidden" type="checkbox" name="accept" value="yes">
+			<span class="popup__checkbox-checker"></span>
+			<span class="popup__checkbox-text">Clicking on the button, you consent to the processing of your personal
+				data.</span>
+		</label>
+		
+<button class="button popup__button">Sign up</button>
+
+
+
+
+
+
+
+		<button class="popup__close popup__close--register" aria-label="Button close popup"><img class="popup__close--img"
+				src="/static/images/button-close.svg"></button>
+	</form>
+</div>
+
+<div class="popup popup--send">
+	<form class="popup__form popup__form--send">
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">What is your name?<span class="popup__star">*</span></span>
+					<input class="popup__input popup__input--send" type="text" name="What is your name?">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Message subject<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Message subject">
+				</label>
+			</div>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Your Email<span class="popup__star">*</span></span>
+					<input class="popup__input" type="email" name="Your Email">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Your mobile phone<span class="popup__star">*</span></span>
+					<input class="popup__input" type="tel" name="Your mobile phone">
+				</label>
+			</div>
+		</div>
+		<div class="popup__coll">
+			<label class="popup__label">
+				<span class="popup__text">What do you want to discuss with me?</span>
+				<textarea class="popup__textarea" type="text" name="textarea text"></textarea>
+			</label>
+		</div>
+		<label class="popup__label popup__label--checkbox">
+			<input class="popup__checkbox hidden" type="checkbox" name="accept" value="yes">
+			<span class="popup__checkbox-checker"></span>
+			<span class="popup__checkbox-text">Clicking on the button, you consent to the processing of your personal
+				data.</span>
+		</label>
+		
+<button class="button popup__button">Send</button>
+
+
+
+
+
+
+
+		<button class="popup__close popup__close--send" aria-label="Button close popup"><img class="popup__close--img"
+				src="/static/images/button-close.svg"></button>
+	</form>
+</div>
+  <script src="/static/js/main.js"></script>
+  <script src="scripts.js"></script>
+</body>
+
+</html>

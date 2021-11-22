@@ -30,6 +30,23 @@
 }
 
 .slider {
+	&__wrapper {
+		height: 465px;
+		overflow: hidden;
+	}
+
+	&__inner-wrapper {
+		height: 100%;
+		display: flex;
+	}
+
+	&__slide {
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		justify-content: center;
+	}
+
 	&__paginations {
 		display: flex;
 		justify-content: space-between;

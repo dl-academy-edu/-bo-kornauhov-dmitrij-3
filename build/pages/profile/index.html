@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link href="/common.css" rel="stylesheet" />
+	<link href="/style.css" rel="stylesheet" />
+	<link href="/static/fonts/font-name.css" rel="stylesheet">
+	<title>Main</title>
+</head>
+
+<body>
+	<header class="header">
+  <div class="container">
+    <div class="header__content">
+      <a class="header__link logo_js" href="/">Home</a>
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li class="header__item"><a class="header__link" href="/pages/blog/index.html">My blog</a></li>
+          <li class="header__item"><a class="header__link popup__open-login">Sign in</a></li>
+          <li class="header__item"><a class="header__link popup__open-register">Register</a></li>
+          <li class="header__item"><a class="header__link" href="/pages/profile/index.html">My profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+	<button class="menu__open menu__open--js @@class"><img class="menu__img" src="/static/images/menu-open.svg"
+		alt="Menu Open Button"></button>
+<div class="menu">
+	<ul class="menu__list">
+		<li class="menu__item"><a class="menu__link menu-focus" href="/">Home</a></li>
+		<li class="menu__item"><a class="menu__link" href="/pages/blog/index.html">My blog</a></li>
+		<li class="menu__item"><a class="menu__link menu__link--sign-js">Sign in</a></li>
+		<li class="menu__item"><a class="menu__link menu__link--register-js">Register</a></li>
+	</ul>
+	<button class="menu__close menu__close--js"><img class="menu__img" src="/static/images/menu-close.svg"
+			alt="Menu Close button"></button>
+</div>
+	<main>
+		<div class="profile">
+	<div class="container">
+		<h1 class="profile__title title-one">My profile</h1>
+		<div class="profile__content">
+			<div class="profile__img-box">
+				<img class="profile__img-photo" src="/static/images/profile-no-photo.svg" width="120" height="144">
+			</div>
+			<div class="profile__info">
+				<ul class="profile__info-list">
+					<li class="profile__info-item">
+						<span class="profile__info-title">Name:</span>
+						<span class="profile__info-text">Oksana</span>
+					</li>
+					<li class="profile__info-item">
+						<span class="profile__info-title">Surname:</span>
+						<span class="profile__info-text">Larioshkina</span>
+					</li>
+					<li class="profile__info-item">
+						<span class="profile__info-title">Email:</span>
+						<span class="profile__info-text">larioshkina@gmail.com</span>
+					</li>
+					<li class="profile__info-item">
+						<span class="profile__info-title">Password:</span>
+						<span class="profile__info-text">**********</span>
+					</li>
+					<li class="profile__info-item">
+						<span class="profile__info-title">Location:</span>
+						<span class="profile__info-text">Tolyatti</span>
+					</li>
+					<li class="profile__info-item">
+						<span class="profile__info-title">Age:</span>
+						<span class="profile__info-text">23</span>
+					</li>
+				</ul>
+				
+<button class="button profile__button profile__change-pass">Change password</button>
+
+
+
+
+
+
+
+				
+<button class="button profile__button profile__change-data">Change other data</button>
+
+
+
+
+
+
+
+				
+<button class="button profile__button profile__delete">Delete account</button>
+
+
+
+
+
+
+
+
+			</div>
+		</div>
+	</div>
+</div>
+	</main>
+	<button class="button__top scroll-button"><img class="button__top--img" src="/static/images/btn-arrow.svg"
+		alt="button top"></button>
+	<div class="popup popup--login">
+	<form class="popup__form popup__form--login">
+		<label class="popup__label">
+			<span class="popup__text">Email<span class="popup__star">*</span></span>
+			<input class="popup__input popup__focus-js" type="email" name="email">
+		</label>
+		<label class="popup__label text">
+			<span class="popup__text">Password<span class="popup__star">*</span></span>
+			<input class="popup__input" type="email" name="email">
+		</label>
+		
+<button class="button popup__button">Log in</button>
+
+
+
+
+
+
+
+		<button class="popup__close popup__close--login" aria-label="Button close popup"><img class="popup__close--img"
+				src="/static/images/button-close.svg"></button>
+	</form>
+</div>
+
+<div class="popup popup--register">
+	<form class="popup__form popup__form--register">
+		<div class="popup__coll">
+			<label class="popup__label">
+				<span class="popup__text">Email<span class="popup__star">*</span></span>
+				<input class="popup__input popup__input--register" type="email" name="email">
+			</label>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Name<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Name">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Surname<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Surname">
+				</label>
+			</div>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Password<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Password">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Repeat password<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Repeat password">
+				</label>
+			</div>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Location<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Loaction">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Age<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Age">
+				</label>
+			</div>
+		</div>
+		<label class="popup__label popup__label--checkbox">
+			<input class="popup__checkbox hidden" type="checkbox" name="accept" value="yes">
+			<span class="popup__checkbox-checker"></span>
+			<span class="popup__checkbox-text">Clicking on the button, you consent to the processing of your personal
+				data.</span>
+		</label>
+		
+<button class="button popup__button">Sign up</button>
+
+
+
+
+
+
+
+		<button class="popup__close popup__close--register" aria-label="Button close popup"><img class="popup__close--img"
+				src="/static/images/button-close.svg"></button>
+	</form>
+</div>
+
+<div class="popup popup--send">
+	<form class="popup__form popup__form--send">
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">What is your name?<span class="popup__star">*</span></span>
+					<input class="popup__input popup__input--send" type="text" name="What is your name?">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Message subject<span class="popup__star">*</span></span>
+					<input class="popup__input" type="text" name="Message subject">
+				</label>
+			</div>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Your Email<span class="popup__star">*</span></span>
+					<input class="popup__input" type="email" name="Your Email">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Your mobile phone<span class="popup__star">*</span></span>
+					<input class="popup__input" type="tel" name="Your mobile phone">
+				</label>
+			</div>
+		</div>
+		<div class="popup__coll">
+			<label class="popup__label">
+				<span class="popup__text">What do you want to discuss with me?</span>
+				<textarea class="popup__textarea" type="text" name="textarea text"></textarea>
+			</label>
+		</div>
+		<label class="popup__label popup__label--checkbox">
+			<input class="popup__checkbox hidden" type="checkbox" name="accept" value="yes">
+			<span class="popup__checkbox-checker"></span>
+			<span class="popup__checkbox-text">Clicking on the button, you consent to the processing of your personal
+				data.</span>
+		</label>
+		
+<button class="button popup__button">Send</button>
+
+
+
+
+
+
+
+		<button class="popup__close popup__close--send" aria-label="Button close popup"><img class="popup__close--img"
+				src="/static/images/button-close.svg"></button>
+	</form>
+</div>
+	<div class="popup popup--pass">
+	<form class="popup__form popup__form--pass">
+		<div class="popup__coll">
+			<label class="popup__label">
+				<span class="popup__text">Old password<span class="popup__star">*</span></span>
+				<input class="popup__input popup__input--pass" type="email" name="Old password">
+			</label>
+		</div>
+		<div class="popup__coll">
+			<label class="popup__label">
+				<span class="popup__text">New password<span class="popup__star">*</span></span>
+				<input class="popup__input " type="email" name="New password">
+			</label>
+		</div>
+		<div class="popup__coll">
+			<label class="popup__label">
+				<span class="popup__text">Repeat new password<span class="popup__star">*</span></span>
+				<input class="popup__input" type="email" name="Repeat new password">
+			</label>
+		</div>
+		
+<button class="button popup__button">Change password</button>
+
+
+
+
+
+
+
+		<button class="popup__close popup__close--pass" aria-label="Button close popup"><img class="popup__close--img"
+				src="/static/images/button-close.svg"></button>
+	</form>
+</div>
+
+
+<div class="popup popup--data">
+	<form class="popup__form popup__form--data">
+		<div class="popup__coll">
+			<label class="popup__label">
+				<span class="popup__text">Email</span>
+				<input class="popup__input popup__input--data" type="email" name="email">
+			</label>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Name</span>
+					<input class="popup__input" type="text" name="Name">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Surname</span>
+					<input class="popup__input" type="text" name="Surname">
+				</label>
+			</div>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Location</span>
+					<input class="popup__input" type="text" name="Loaction">
+				</label>
+			</div>
+			<div class="popup__coll-50">
+				<label class="popup__label">
+					<span class="popup__text">Age</span>
+					<input class="popup__input" type="text" name="Age">
+				</label>
+			</div>
+		</div>
+		<div class="popup__coll">
+			<div class="popup__coll-50 popup__coll-50--file">
+				<label class="popup__label popup__label--file">
+					<span class="popup__text">Profile picture</span>
+					<input class="popup__input file_js" type="file" name="avatar" accept=".png, .jpg, .jpeg">
+				</label>
+				<div class="popup__file popup-file">
+					<img class="popup-file__img" src="/static/images/file-upload.svg" alt="file icon">
+					<span class="popup-file__text fileText_js">file-name.png</span>
+				</div>
+			</div>
+		</div>
+		
+<button class="button popup__button">Submit changes</button>
+
+
+
+
+
+
+
+		<button class="popup__close popup__close--data" aria-label="Button close popup"><img class="popup__close--img"
+				src="/static/images/button-close.svg"></button>
+	</form>
+</div>
+	<script src="/static/js/main.js"></script>
+	<script src="scripts.js"></script>
+</body>
+
+</html>

@@ -17,9 +17,12 @@
 		@@include('calc-blog/index.html')
 		@@include('blog/index.html')
 	</main>
-	@@include('contacts/index.html')
+	@@include('contacts/index.html', {
+	"class": "contacts__bg"
+	})
 	@@include('button-top/index.html')
 	@@include('popup/main.html')
+	<script src="/static/js/main.js"></script>
 	<script src="scripts.js"></script>
 </body>
 

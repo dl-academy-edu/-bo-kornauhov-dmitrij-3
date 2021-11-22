@@ -1,8 +1,7 @@
-@import "../../components/mixins";
+@import "../../components/mixin";
 @import "../../components/colors";
 @import "../../components/vars";
 
-
-	.menu__open {
-		top: 20px;
-	}
+.contacts__bg {
+	background: $c__gray-white;
+}
