@@ -3,6 +3,7 @@
 @import "./vars";
 
 .blog {
+	
 	&__list {
 		@include media(0, 670px) {
 			display: flex;

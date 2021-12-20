@@ -1,21 +1,21 @@
 <div class="popup popup--pass">
-	<form class="popup__form popup__form--pass">
+	<form class="popup__form popup__form--pass" name="change-password">
 		<div class="popup__coll">
 			<label class="popup__label">
 				<span class="popup__text">Old password<span class="popup__star">*</span></span>
-				<input class="popup__input popup__input--pass" type="email" name="Old password">
+				<input class="popup__input popup__input--pass" type="password" name="oldPassword">
 			</label>
 		</div>
 		<div class="popup__coll">
 			<label class="popup__label">
 				<span class="popup__text">New password<span class="popup__star">*</span></span>
-				<input class="popup__input " type="email" name="New password">
+				<input class="popup__input " type="password" name="newPassword">
 			</label>
 		</div>
 		<div class="popup__coll">
 			<label class="popup__label">
 				<span class="popup__text">Repeat new password<span class="popup__star">*</span></span>
-				<input class="popup__input" type="email" name="Repeat new password">
+				<input class="popup__input" type="password" name="repeatPassword">
 			</label>
 		</div>
 		@@include('button/index.html', {
@@ -31,7 +31,7 @@
 
 
 <div class="popup popup--data">
-	<form class="popup__form popup__form--data">
+	<form class="popup__form popup__form--data" name="data">
 		<div class="popup__coll">
 			<label class="popup__label">
 				<span class="popup__text">Email</span>
@@ -42,13 +42,13 @@
 			<div class="popup__coll-50">
 				<label class="popup__label">
 					<span class="popup__text">Name</span>
-					<input class="popup__input" type="text" name="Name">
+					<input class="popup__input" type="text" name="name">
 				</label>
 			</div>
 			<div class="popup__coll-50">
 				<label class="popup__label">
 					<span class="popup__text">Surname</span>
-					<input class="popup__input" type="text" name="Surname">
+					<input class="popup__input" type="text" name="surname">
 				</label>
 			</div>
 		</div>
@@ -56,13 +56,13 @@
 			<div class="popup__coll-50">
 				<label class="popup__label">
 					<span class="popup__text">Location</span>
-					<input class="popup__input" type="text" name="Loaction">
+					<input class="popup__input" type="text" name="location">
 				</label>
 			</div>
 			<div class="popup__coll-50">
 				<label class="popup__label">
 					<span class="popup__text">Age</span>
-					<input class="popup__input" type="text" name="Age">
+					<input class="popup__input" type="text" name="age">
 				</label>
 			</div>
 		</div>
@@ -73,8 +73,8 @@
 					<input class="popup__input file_js" type="file" name="avatar" accept=".png, .jpg, .jpeg">
 				</label>
 				<div class="popup__file popup-file">
-					<img class="popup-file__img" src="/static/images/file-upload.svg" alt="file icon">
-					<span class="popup-file__text fileText_js">file-name.png</span>
+					<img class="popup-file__img" src="/static/images/file-upload.svg" alt="file-icon">
+					<span class="popup-file__text file-text_js">file-name.png</span>
 				</div>
 			</div>
 		</div>

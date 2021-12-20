@@ -4,9 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
   <link href="/common.css" rel="stylesheet" />
   <link href="/style.css" rel="stylesheet" />
   <link href="/static/fonts/font-name.css" rel="stylesheet">
+
   <title>Main</title>
 </head>
 
@@ -18,22 +20,27 @@
       <nav class="header__nav">
         <ul class="header__menu">
           <li class="header__item"><a class="header__link" href="/pages/blog/index.html">My blog</a></li>
-          <li class="header__item"><a class="header__link popup__open-login">Sign in</a></li>
-          <li class="header__item"><a class="header__link popup__open-register">Register</a></li>
-          <li class="header__item"><a class="header__link" href="/pages/profile/index.html">My profile</a></li>
+          <li class="header__item"><a class="header__link signin-js" href="#">Sign in</a></li>
+          <li class="header__item"><a class="header__link register-js" href="#">Register</a></li>
+          <li class="header__item"><a class="header__link profile-js hide_js" href="/pages/profile/index.html">My
+              profile</a>
+          <li class="header__item"><a class="header__link logout-js hide_js" href="#">Logout</a>
+          </li>
         </ul>
       </nav>
     </div>
   </div>
 </header>
-  <button class="menu__open menu__open--js menu-open"><img class="menu__img" src="/static/images/menu-open.svg"
+  <button class="menu__open menu_js menu-open"><img class="menu__img" src="/static/images/menu-open.svg"
 		alt="Menu Open Button"></button>
 <div class="menu">
 	<ul class="menu__list">
-		<li class="menu__item"><a class="menu__link menu-focus" href="/">Home</a></li>
+		<li class="menu__item"><a class="menu__link focus-js" href="/">Home</a></li>
 		<li class="menu__item"><a class="menu__link" href="/pages/blog/index.html">My blog</a></li>
-		<li class="menu__item"><a class="menu__link menu__link--sign-js">Sign in</a></li>
-		<li class="menu__item"><a class="menu__link menu__link--register-js">Register</a></li>
+		<li class="menu__item"><a class="menu__link signin-js--menu">Sign in</a></li>
+		<li class="menu__item"><a class="menu__link register-js--menu">Register</a></li>
+		<li class="menu__item"><a class="menu__link profile-js--menu hidden">profile</a></li>
+		<li class="menu__item"><a class="menu__link logout-js--menu hidden">Logout</a></li>
 	</ul>
 	<button class="menu__close menu__close--js"><img class="menu__img" src="/static/images/menu-close.svg"
 			alt="Menu Close button"></button>
@@ -47,7 +54,7 @@
 				<p class=" text first-screen__text">Future front-end developer
 					23 years old, Tolyatti</p>
 			</div>
-			<div class="first-screen__slider slider">
+			<diqv class="first-screen__slider slider">
 				<div class="slider__wrapper">
 					<div class="slider__inner-wrapper">
 						<div class="slider__slide">
@@ -88,7 +95,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="slider__paginations">
+				<div class="slider__control">
 					
 
 <button class="slider__button slider__button--prev arrow-button arrow-button--left" aria-label="@@label"><img class="arrow-button__img" src="/static/images/btn-arrow.svg" alt="Toggle Left"></button>
@@ -99,7 +106,7 @@
 
 
 
-					<div class="slider__paginations-btn"></div>
+					<div class="slider__pagination pagination"></div>
 					
 
 
@@ -111,7 +118,7 @@
 
 
 				</div>
-			</div>
+			</diqv>
 		</div>
 	</div>
 </section>
@@ -190,23 +197,72 @@
 	<div class="container">
 		<div class="portfolio__content">
 			<h2 class="portfolio__title title-two">Portfolio</h2>
-			<div class="portfolio__banner">
-			<picture>
-				<source srcset="/static/images/portfolio.jpg, /static/images/portfolio-retina.jpg 2x" media="(min-width 769px)">
-				<source srcset="/static/images/portfolio-tab.jpg" media="(min-width: 500px) and (max-width: 768px)">
-				<source srcset="/static/images/portfolio-mob.jpg" media="(max-width: 499px)">
-				<img class="portfolio__img" src="static/images/portfolio.jpg" alt="portfolio">
-			</picture>
-			<button class="portfolio__btn portfolio__btn--left"><img class="portfolio__img" src="static/images/portfolio-arrow.svg" alt="arrow left"></button>
-			<button class="portfolio__btn portfolio__btn--right"><img class="portfolio__img" src="static/images/portfolio-arrow.svg" alt="arrow right"></button>
-			<div class="portfolio__bottom">
-				<div class="portfolio__info portfolio-info">
-					<a class="portfolio-info__link">Learning site for DL Academy courses</a>
-					<p class="portfolio-info__descrip">A simple multi-page static site. The design layout was in Figma. HTML and CSS were used. The site is responsive and
-					cross-browser, but without adding interactivity via JavaScript.</p>
+			<div class="swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<picture>
+							<source srcset="/static/images/portfolio.jpg, /static/images/portfolio-retina.jpg 2x"
+								media="(min-width 769px)">
+							<source srcset="/static/images/portfolio-tab.jpg" media="(min-width: 500px) and (max-width: 768px)">
+							<source srcset="/static/images/portfolio-mob.jpg" media="(max-width: 499px)">
+							<img class="portfolio__img" src="static/images/portfolio.jpg" alt="portfolio">
+						</picture>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+						<div class="portfolio__bottom">
+							<div class="portfolio__info portfolio-info">
+								<a class="portfolio-info__link">Learning site for DL Academy courses</a>
+								<p class="portfolio-info__descrip">A simple multi-page static site. The design layout was in Figma.
+									HTML
+									and CSS were used. The site is responsive and
+									cross-browser, but without adding interactivity via JavaScript.</p>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<picture>
+							<source srcset="/static/images/portfolio.jpg, /static/images/portfolio-retina.jpg 2x"
+								media="(min-width 769px)">
+							<source srcset="/static/images/portfolio-tab.jpg" media="(min-width: 500px) and (max-width: 768px)">
+							<source srcset="/static/images/portfolio-mob.jpg" media="(max-width: 499px)">
+							<img class="portfolio__img" src="static/images/portfolio.jpg" alt="portfolio">
+						</picture>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+						<div class="portfolio__bottom">
+							<div class="portfolio__info portfolio-info">
+								<a class="portfolio-info__link">Learning site for DL Academy courses</a>
+								<p class="portfolio-info__descrip">A simple multi-page static site. The design layout was in Figma.
+									HTML
+									and CSS
+									were used. The site is responsive and
+									cross-browser, but without adding interactivity via JavaScript.</p>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<picture>
+							<source srcset="/static/images/portfolio.jpg, /static/images/portfolio-retina.jpg 2x"
+								media="(min-width 769px)">
+							<source srcset="/static/images/portfolio-tab.jpg" media="(min-width: 500px) and (max-width: 768px)">
+							<source srcset="/static/images/portfolio-mob.jpg" media="(max-width: 499px)">
+							<img class="portfolio__img" src="static/images/portfolio.jpg" alt="portfolio">
+						</picture>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+						<div class="portfolio__bottom">
+							<div class="portfolio__info portfolio-info">
+								<a class="portfolio-info__link">Learning site for DL Academy courses</a>
+								<p class="portfolio-info__descrip">A simple multi-page static site. The design layout was in Figma.
+									HTML
+									and CSS
+									were used. The site is responsive and
+									cross-browser, but without adding interactivity via JavaScript.</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
 		</div>
 	</div>
 </section>
@@ -218,8 +274,7 @@
 			<p class="contacts__subtitle">Want to know more or just chat?
 				You are welcome!</p>
 			
-<button class="button contacts__button">Send message</button>
-
+<button class="button contacts__button message-js">Send message</button>
 
 
 
@@ -236,7 +291,6 @@
 
 <a class="link contacts__link" href="#">Instagram</a>
 
-
 				</li>
 				<li class="contacts__item">
 					
@@ -246,7 +300,6 @@
 
 
 <a class="link contacts__link" href="#">Vk</a>
-
 
 				</li>
 				<li class="contacts__item">
@@ -258,7 +311,6 @@
 
 <a class="link contacts__link" href="#">Telegram</a>
 
-
 				</li>
 				<li class="contacts__item">
 					
@@ -268,7 +320,6 @@
 
 
 <a class="link contacts__link" href="#">Mail</a>
-
 
 				</li>
 				<li class="contacts__item">
@@ -280,7 +331,6 @@
 
 <a class="link contacts__link" href="#">GitHub</a>
 
-
 				</li>
 				<li class="contacts__item">
 					
@@ -290,7 +340,6 @@
 
 
 <a class="link contacts__link" href="#">Phone</a>
-
 
 				</li>
 			</ul>
@@ -305,18 +354,17 @@
   <button class="button__top scroll-button"><img class="button__top--img" src="/static/images/btn-arrow.svg"
 		alt="button top"></button>
   <div class="popup popup--login">
-	<form class="popup__form popup__form--login">
+	<form class="popup__form popup__form--login" name="login">
 		<label class="popup__label">
 			<span class="popup__text">Email<span class="popup__star">*</span></span>
-			<input class="popup__input popup__focus-js" type="email" name="email">
+			<input class="popup__input popup__input-login  popup__focus-js" type="email" name="email">
 		</label>
 		<label class="popup__label text">
 			<span class="popup__text">Password<span class="popup__star">*</span></span>
-			<input class="popup__input" type="email" name="email">
+			<input class="popup__input popup__input-login" type="password" name="password">
 		</label>
 		
 <button class="button popup__button">Log in</button>
-
 
 
 
@@ -329,7 +377,7 @@
 </div>
 
 <div class="popup popup--register">
-	<form class="popup__form popup__form--register">
+	<form class="popup__form popup__form--register" name="register">
 		<div class="popup__coll">
 			<label class="popup__label">
 				<span class="popup__text">Email<span class="popup__star">*</span></span>
@@ -340,13 +388,13 @@
 			<div class="popup__coll-50">
 				<label class="popup__label">
 					<span class="popup__text">Name<span class="popup__star">*</span></span>
-					<input class="popup__input" type="text" name="Name">
+					<input class="popup__input" type="text" name="name">
 				</label>
 			</div>
 			<div class="popup__coll-50">
 				<label class="popup__label">
 					<span class="popup__text">Surname<span class="popup__star">*</span></span>
-					<input class="popup__input" type="text" name="Surname">
+					<input class="popup__input" type="text" name="surname">
 				</label>
 			</div>
 		</div>
@@ -354,13 +402,13 @@
 			<div class="popup__coll-50">
 				<label class="popup__label">
 					<span class="popup__text">Password<span class="popup__star">*</span></span>
-					<input class="popup__input" type="text" name="Password">
+					<input class="popup__input" type="password" name="password">
 				</label>
 			</div>
 			<div class="popup__coll-50">
 				<label class="popup__label">
 					<span class="popup__text">Repeat password<span class="popup__star">*</span></span>
-					<input class="popup__input" type="text" name="Repeat password">
+					<input class="popup__input" type="password" name="passwordRepeat">
 				</label>
 			</div>
 		</div>
@@ -368,13 +416,13 @@
 			<div class="popup__coll-50">
 				<label class="popup__label">
 					<span class="popup__text">Location<span class="popup__star">*</span></span>
-					<input class="popup__input" type="text" name="Loaction">
+					<input class="popup__input" type="text" name="location">
 				</label>
 			</div>
 			<div class="popup__coll-50">
 				<label class="popup__label">
 					<span class="popup__text">Age<span class="popup__star">*</span></span>
-					<input class="popup__input" type="text" name="Age">
+					<input class="popup__input" type="text" name="age">
 				</label>
 			</div>
 		</div>
@@ -385,10 +433,9 @@
 				data.</span>
 		</label>
 		
-<button class="button popup__button">Sign up</button>
 
 
-
+<button class="button popup__button" disabled>Sign up</button>
 
 
 
@@ -399,18 +446,18 @@
 </div>
 
 <div class="popup popup--send">
-	<form class="popup__form popup__form--send">
+	<form class="popup__form popup__form--send" name="send">
 		<div class="popup__coll">
 			<div class="popup__coll-50">
 				<label class="popup__label">
 					<span class="popup__text">What is your name?<span class="popup__star">*</span></span>
-					<input class="popup__input popup__input--send" type="text" name="What is your name?">
+					<input class="popup__input popup__input--send" type="text" name="name">
 				</label>
 			</div>
 			<div class="popup__coll-50">
 				<label class="popup__label">
 					<span class="popup__text">Message subject<span class="popup__star">*</span></span>
-					<input class="popup__input" type="text" name="Message subject">
+					<input class="popup__input" type="text" name="messageSubject">
 				</label>
 			</div>
 		</div>
@@ -418,20 +465,20 @@
 			<div class="popup__coll-50">
 				<label class="popup__label">
 					<span class="popup__text">Your Email<span class="popup__star">*</span></span>
-					<input class="popup__input" type="email" name="Your Email">
+					<input class="popup__input" type="text" name="email">
 				</label>
 			</div>
 			<div class="popup__coll-50">
 				<label class="popup__label">
 					<span class="popup__text">Your mobile phone<span class="popup__star">*</span></span>
-					<input class="popup__input" type="tel" name="Your mobile phone">
+					<input class="popup__input" type="tel" name="telephone">
 				</label>
 			</div>
 		</div>
 		<div class="popup__coll">
 			<label class="popup__label">
 				<span class="popup__text">What do you want to discuss with me?</span>
-				<textarea class="popup__textarea" type="text" name="textarea text"></textarea>
+				<textarea class="popup__textarea popup__input" type="text" name="textarea"></textarea>
 			</label>
 		</div>
 		<label class="popup__label popup__label--checkbox">
@@ -441,10 +488,9 @@
 				data.</span>
 		</label>
 		
-<button class="button popup__button">Send</button>
 
 
-
+<button class="button popup__button" disabled>Send</button>
 
 
 
@@ -453,7 +499,14 @@
 				src="/static/images/button-close.svg"></button>
 	</form>
 </div>
-  <script src="/static/js/main.js"></script>
+  <div class="answer">
+	<p class="answer__text">The form was sent but the server transmits an error: “The form was sent but the server
+		transmits an error”</p>
+	<button class="answer__close" aria-label="answer close"><img class="button-x" src="/static/images/button-close.svg"
+			width="25" height="25"></button>
+</div>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="/static/js/main2.js"></script>
   <script src="scripts.js"></script>
 </body>
 

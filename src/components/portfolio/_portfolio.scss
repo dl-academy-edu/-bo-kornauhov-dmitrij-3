@@ -1,3 +1,7 @@
+@import "./mixin";
+@import "./colors";
+@import "./vars";
+
 .portfolio {
 	background: #f6f6f6;
 	&__content {
@@ -101,4 +105,39 @@
 			max-width: 250px;
 		}
 	}
+}
+
+.swiper {
+	height: 604px;
+}
+
+.swiper-button-prev {
+	left: 30px;
+
+	@include media(0, $m_mob--md) {
+		left: 15px;
+	}
+}
+
+.swiper-button-next {
+	right: 30px;
+
+	@include media(0, $m_mob--md) {
+		right: 15px;
+	}
+}
+
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+	width: 25px;
+	height: 42px;
+
+	background: url(/static/images/portfolio-arrow.svg) center center no-repeat;
+
+	content: "";
+}
+
+.swiper-button-next:after {
+	transform: rotate(180deg);
 }

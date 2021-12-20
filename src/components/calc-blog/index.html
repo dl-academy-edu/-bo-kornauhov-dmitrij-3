@@ -2,59 +2,26 @@
 	<div class="container">
 		<div class="calc__content">
 			<h1 class="calc__title title-one">My blog</h1>
-			<form class="calc__form calc-form">
+			<form class="calc__form calc-form" name="calc">
 				<div class="calc-form__top">
 					<fieldset class="calc-form__fieldset calc-form__fieldset--tags">
 						<legend class="calc-form__title">Tags</legend>
-						<div class="calc-form__box">
-						<label class="calc-form__check-label">
-							<input class="calc-form__input  hidden" type="checkbox" name="tag blue" checked>
-							<span class="calc-form__check calc-form__check--2176FF"></span>
-						</label>
-						<label class="calc-form__check-label">
-							<input class="calc-form__input hidden" type="checkbox" name="tag blue white">
-							<span class="calc-form__check calc-form__check--33A1FD"></span>
-						</label>
-						<label class="calc-form__check-label">
-							<input class="calc-form__input hidden" type="checkbox" name="tag yellow">
-							<span class="calc-form__check calc-form__check--FDCA40"></span>
-						</label>
-						<label class="calc-form__check-label">
-							<input class="calc-form__input hidden" type="checkbox" name="tag turquoise">
-							<span class="calc-form__check calc-form__check--57E2E5"></span>
-						</label>
-						<label class="calc-form__check-label">
-							<input class="calc-form__input hidden" type="checkbox" name="tag orange">
-							<span class="calc-form__check calc-form__check--F79824"></span>
-						</label>
-						<label class="calc-form__check-label">
-							<input class="calc-form__input hidden" type="checkbox" name="tag pink" checked>
-							<span class="calc-form__check calc-form__check--E08DAC"></span>
-						</label>
-						<label class="calc-form__check-label">
-							<input class="calc-form__input hidden" type="checkbox" name="tag dark blue">
-							<span class="calc-form__check calc-form__check--6A7FDB"></span>
-						</label>
-						<label class="calc-form__check-label">
-							<input class="calc-form__input hidden" type="checkbox" name="tag green">
-							<span class="calc-form__check calc-form__check--45CB85"></span>
-						</label>
-						</div>
+						<div class="calc-form__tags-box tags_js"></div>
 					</fieldset>
 					<fieldset class="calc-form__fieldset calc-form__fieldset--views">
 						<legend class="calc-form__title">Views</legend>
 						<label class="calc-form__radio-label">
-							<input class="calc-form__input  hidden" type="radio" name="views">
+							<input class="calc-form__input  hidden" type="radio" name="views" value="100-500">
 							<span class="calc-form__radio"></span>
 							<span class="calc-form__radio-text text">100-500</span>
 						</label>
 						<label class="calc-form__radio-label">
-							<input class="calc-form__input  hidden" type="radio" name="views" checked>
+							<input class="calc-form__input  hidden" type="radio" name="views" value="500-1000" checked>
 							<span class="calc-form__radio"></span>
 							<span class="calc-form__radio-text text">500-1000</span>
 						</label>
 						<label class="calc-form__radio-label">
-							<input class="calc-form__input  hidden" type="radio" name="views">
+							<input class="calc-form__input  hidden" type="radio" name="views" value="1000-2000">
 							<span class="calc-form__radio"></span>
 							<span class="calc-form__radio-text text">1000-2000</span>
 					</label>
@@ -62,17 +29,17 @@
 				<fieldset class="calc-form__fieldset calc-form__fieldset--comments">
 					<legend class="calc-form__title">Comments</legend>
 					<label class="calc-form__check-label">
-						<input class="calc-form__input  hidden" type="checkbox" name="comments 0" checked>
+						<input class="calc-form__input  hidden" type="checkbox" name="commentsCount" value="0" checked>
 						<span class="calc-form__check"></span>
 						<span class="calc-form__check-text text">0</span>
 					</label>
 					<label class="calc-form__check-label">
-						<input class="calc-form__input hidden" type="checkbox" name="comments 0-1">
+						<input class="calc-form__input hidden" type="checkbox" name="commentsCount" value="0-1">
 						<span class="calc-form__check"></span>
 						<span class="calc-form__check-text text">0-1</span>
 					</label>
 					<label class="calc-form__check-label">
-						<input class="calc-form__input hidden" type="checkbox" name="comments 1-50">
+						<input class="calc-form__input hidden" type="checkbox" name="commentsCount" value="1-50">
 						<span class="calc-form__check"></span>
 						<span class="calc-form__check-text text">1-50</span>
 					</label>
@@ -80,12 +47,12 @@
 					<fieldset class="calc-form__fieldset calc-form__fieldset--show">
 						<legend class="calc-form__title">How show?</legend>
 						<label class="calc-form__radio-label">
-							<input class="calc-form__input  hidden" type="radio" name="show" checked>
+							<input class="calc-form__input  hidden" type="radio" name="show" value="5" checked>
 							<span class="calc-form__radio"></span>
 							<span class="calc-form__radio-text text">show 5</span>
 						</label>
 						<label class="calc-form__radio-label">
-							<input class="calc-form__input  hidden" type="radio" name="show">
+							<input class="calc-form__input  hidden" type="radio" name="show" value="10">
 							<span class="calc-form__radio"></span>
 							<span class="calc-form__radio-text text">show 10</span>
 						</label>
@@ -93,17 +60,17 @@
 					<fieldset class="calc-form__fieldset calc-form__fieldset--sort">
 						<legend class="calc-form__title">Sort by</legend>
 						<label class="calc-form__radio-label">
-							<input class="calc-form__input  hidden" type="radio" name="sort" checked>
+							<input class="calc-form__input  hidden" type="radio" name="sort" value="date" checked>
 							<span class="calc-form__radio"></span>
 							<span class="calc-form__radio-text text">date</span>
 						</label>
 						<label class="calc-form__radio-label">
-							<input class="calc-form__input  hidden" type="radio" name="sort">
+							<input class="calc-form__input  hidden" type="radio" name="sort" value="title">
 							<span class="calc-form__radio"></span>
 							<span class="calc-form__radio-text text">title</span>
 						</label>
 						<label class="calc-form__radio-label">
-							<input class="calc-form__input  hidden" type="radio" name="sort">
+							<input class="calc-form__input  hidden" type="radio" name="sort" value="views">
 							<span class="calc-form__radio"></span>
 							<span class="calc-form__radio-text text">views</span>
 						</label>
@@ -113,7 +80,7 @@
 						@@include('button/index.html', {
 							"type": "button",
 							"text": "Reset",
-							"class": "calc-form__button",
+							"class": "calc-form__button button-reset_js",
 							"disabled": "no"
 						})
 					</fieldset>
@@ -123,7 +90,7 @@
 						@@include('button/index.html', {
 							"type": "button",
 							"text": "Search",
-							"class": "calc-search__button",
+							"class": "calc-search__button button-search_js",
 							"disabled": "no"
 						})	
 				</div>

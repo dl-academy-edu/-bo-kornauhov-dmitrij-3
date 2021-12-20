@@ -1,89 +1,241 @@
+const profileName = document.querySelector(".profile-name_js"),
+			profileSurname = document.querySelector(".profile-surname_js"),
+			profileEmail = document.querySelector(".profile-email_js"),
+			profileLocation = document.querySelector(".profile-location_js"),
+			profileAge = document.querySelector(".profile-age_js"),
+			profilePhoto = document.querySelector(".profile-photo_js"),
+			token = localStorage.getItem("token"),
+			userId = localStorage.getItem("userId"),
+			deleteButton = document.querySelector(".delete-js");
 
+let user = {};
 
-
-(() => {  
-		const popup = document.querySelector(".popup--pass"),
-          body = document.body,
-				  openPopup = document.querySelector(".profile__change-pass"),
-				  closePopup = document.querySelector(".popup__close--pass"),
-          popupPassInput = document.querySelector(".popup__input--pass");
-
-    openPopup.addEventListener("click", (e) => {
-    e.preventDefault()
-    popup.classList.add("open_js")
-    body.classList.add("body_scroll")
-    popupPassInput.focus()
-  })
-
-    closePopup.addEventListener("click", (e) => {
-    e.preventDefault()
-    body.classList.remove("body_scroll")
-    popup.classList.remove("open_js")
-  })
-
-
-   window.addEventListener("keydown", (e) => {
-    if (e.code === "Escape" && popup.classList.contains("open_js")) {
-      popup.classList.remove("open_js")
-		  popupButton.focus()
-    }
-  })
-})();
-
-
-(() => {  
-		const popup = document.querySelector(".popup--data"),
-          body = document.body,
-				  openPopup = document.querySelector(".profile__change-data"),
-				  closePopup = document.querySelector(".popup__close--data"),
-          popupDataInput = document.querySelector(".popup__input--data");
-
-
-  openPopup.addEventListener("click", (e) => {
-    e.preventDefault()
-    popup.classList.add("open_js")
-    body.classList.add("body_scroll")
-    popupDataInput.focus()
-  })
-
-    closePopup.addEventListener("click", (e) => {
-    e.preventDefault()
-    body.classList.remove("body_scroll")
-    popup.classList.remove("open_js")
-  })
-
-
-   window.addEventListener("keydown", (e) => {
-    if (e.code === "Escape" && popup.classList.contains("open_js")) {
-      popup.classList.remove("open_js")
-		  popupButton.focus()
-    }
-  })
-})();
-
+/* --- Change Password Popup --- */
 
 (() => {
-  const menu = document.querySelector(".menu"),
-				menuOpen = document.querySelector(".menu__open--js"),
-        focusItem = document.querySelector(".menu-focus"),
-				menuClose = document.querySelector(".menu__close--js");
+	const open = document.querySelector(".password-js"),
+				window = document.querySelector(".popup--pass"),
+				form = document.forms["change-password"];
 
-    menuOpen.addEventListener("click", () => {
-      menu.classList.add("open_js-flex");
-      body.classList.add("body_scroll");
-      focusItem.focus();
-    })
 
-  menuClose.addEventListener("click", (e) => {
-    menu.classList.remove("open_js-flex");
-    body.classList.remove("body_scroll");
-  })
+	if (open) {
+		open.addEventListener("click", () => {
+			popup(window, open, form);
+		})
+	}
 
-  window.addEventListener("keydown", (e) => {
-    if (e.code === "Escape" && menu.classList.contains("open_js")) {
-      menu.classList.remove("open_js-flex");
-      body.classList.remove("body_scroll");
-      menuOpen.focus();
-    }
-  })
+	form.addEventListener("submit", (e) => {
+		submit(e);
+	})
+
+	function submit(e) {
+		e.preventDefault();
+
+		const bodyFormData = getFormData(e.target, {}, "FormData");
+		const bodyJSON = getFormData(e.target);
+		let errors = validateData(bodyJSON, errors = {});
+		
+		if (Object.keys(errors).length > 0) {
+			setFormErrors(e.target, errors);
+		} else {
+			sendRequest({
+				method: "PUT",
+				body: bodyFormData,
+				url: "/api/users",
+				headers: {
+					"x-access-token": token,
+				}
+			})
+			.then(res => res.json())
+			.then (res => {
+				if (res.success) {
+					clearForm(e.target);
+					setFormSuccess(e.target);
+					setTimeout(() => {
+						popupClose(window, open, form);
+						answer(answerPopup, "Пароль был успешно изменён", "success");
+					}, 2000);
+				} else {
+					throw res;
+				}
+			})
+			.catch ((err) => {
+				if (err._message) {
+					answer(answerPopup, err._message, "error");
+				} else {
+					answer(answerPopup, "Ошибка сервера", "error");
+				}
+			})
+		}
+	}
+
+	function validateData(data, errors = {}) {
+
+		if (data.oldPassword.length === 0) {
+			errors.oldPassword = "Пожалуйста, введите старый пароль";
+		}
+		if (data.newPassword.length < 4) {
+			errors.newPassword = "Ваш пороль слишком короткий";
+		}
+		if (data.repeatPassword !== data.newPassword || data.repeatPassword === "") {
+			errors.repeatPassword = "Вы неправильно повторили пароль";
+		}
+		if (data.oldPassword === data.newPassword) {
+			errors.newPassword = "Новый пароль должен отличаться от старого";
+		}
+		return errors;
+	}
 })();
+
+/* --- Change Data Popup --- */
+
+(() => {
+	const open = document.querySelector(".data-js"),
+				window = document.querySelector(".popup--data"),
+				form = document.forms["data"],
+				file = document.querySelector(".file_js"),
+				fileText = document.querySelector(".file-text_js");
+
+
+	if (open) {
+		open.addEventListener("click", () => {
+			setValueToForm(form, user);
+			popup(window, open, form);
+		})
+	}
+
+	file.addEventListener("input", () => {
+		if (file.value) {
+			let fileName = file.value.slice(12);
+
+			if (fileName.length > 20) {
+				fileName = fileName.slice(0, 20) + "...";
+			}
+
+			fileText.innerHTML = fileName;
+		}
+	})
+
+	form.addEventListener("submit", (e) => {
+		submit(e);
+	})
+
+	function submit(e) {
+		e.preventDefault();
+
+		if (isLoading) {
+			return;
+		}
+
+		const bodyFormData = getFormData(e.target, {}, "FormData");
+		const bodyJSON = getFormData(e.target);
+		let errors = validateData(bodyJSON);
+
+		if (Object.keys(errors).length > 0) {
+			setFormErrors(e.target, errors);
+			isLoading = false;
+		} else {
+			sendRequest({
+				method: "PUT",
+				body: bodyFormData,
+				url: "/api/users",
+				headers: {
+					"x-access-token": token,
+				}
+			})
+			.then(res => res.json())
+			.then (res => {
+				if (res.success) {
+					rerenderUserData(res.data);
+					setFormSuccess(e.target);
+					setTimeout(() => {
+						popupClose(window, open, form);
+						answer(answerPopup, "Форма была успешно отправлена", "success");
+					}, 2000);
+				} else {
+					throw res;
+				}
+			})
+			.catch ((err) => {
+				if (err.errors) {
+					setFormErrors(form, err.errors);
+				} else {
+					answer(answerPopup, "Ошибка сервера", "error");
+				}
+			})
+		}
+	}
+
+	function validateData(data, errors = {}) {
+		if (isNaN(data.age) || data.age === "") {
+			errors.age = "Введите возраст";
+		}
+		return errors;
+	}
+})()
+
+/* --- User Update --- */
+
+function updateUserData() {
+		if (!token || !userId) {
+			return window.location = "/";
+		}
+
+		sendRequest({
+			method: "GET",
+			url: `/api/users/${userId}`,
+			headers: {
+				"Content-Type": "application/json"
+			}
+		})
+		.then(res => res.json())
+		.then(res => {
+			if (res.success) {
+				user = res.data;
+				rerenderUserData(user);
+			} else {
+				throw res;
+			}
+		})
+		.catch(err => {
+			return window.location = "/";
+		})
+}
+
+updateUserData();
+
+function rerenderUserData(user) {
+	profileName.innerText = user.name;
+	profileSurname.innerText = user.surname;
+	profileEmail.innerText = user.email;
+	profileLocation.innerText = user.location;
+	profileAge.innerText = user.age,
+	profilePhoto.innerText = "",
+	profilePhoto.style = `background-image: url(${SERVER_URL}${user.photoUrl})`;
+}
+
+/* --- Delete User --- */
+
+deleteButton.addEventListener("click", () => {
+	sendRequest({
+		method: "DELETE",
+		url: `/api/users/${userId}`,
+		headers: {
+			"x-access-token": token,
+		}
+	})
+	.then(res => res.json())
+	.then(res => {
+		if (res.success) {
+			answer(answerPopup, "Пользователь был успешно удалён", "success");
+			setTimeout(() => {
+				logoutUser();
+			}, 2000)
+		} else {
+			throw res;
+		}
+	})
+	.catch(() => {
+		answer(answerPopup, "Ошибка сервера", "error");
+	})
+})

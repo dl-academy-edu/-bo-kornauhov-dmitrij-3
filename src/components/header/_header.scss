@@ -21,11 +21,12 @@
 		display: flex;
 	}
 
-	&__item {
-		margin-left: 20px;
-	}
+	// &__item {
+	// 	margin-left: 20px;
+	// }
 
 	&__link {
+		margin-left: 20px;
 		font-size: 18px;
 		line-height: 22px;
 		font-weight: 700;

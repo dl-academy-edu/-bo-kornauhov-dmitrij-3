@@ -14,6 +14,7 @@
 @import "./profile/profile";
 @import "./menu/menu";
 @import "./popup/popup";
+@import "./answer/answer";
 // Подключение компонентов
 
 .title {
@@ -134,6 +135,12 @@ fieldset {
 	display: flex;
 }
 
-.disabled {
+.overflow_js {
+	overflow: hidden;
+}
+
+.hide_js {
 	display: none;
 }
+
+

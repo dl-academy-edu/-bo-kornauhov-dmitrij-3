@@ -95,6 +95,22 @@
 		font-size: 14px;
 		line-height: 16px;
 		display: inline-block;
+
+		&--error {
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 16px;
+			color: $c__red;
+			margin: 10px 0 0 0;
+		}
+
+		&--success {
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 16px;
+			color: $c__green;
+			margin: 10px 0 0 0;
+		}
 	}
 
 	&__star {
@@ -121,6 +137,30 @@
 		&:focus {
 			outline: 2.5px solid $c__black;
 		}
+
+		&--error {
+			outline: 2.5px solid $c__red;
+
+			&:hover {
+			outline: 2.5px solid $c__red;
+			}
+
+			&:focus {
+			outline: 2.5px solid $c__red;
+			}
+		}
+
+		&--success {
+			outline: 2.5px solid $c__green;
+
+			&:hover {
+			outline: 2.5px solid $c__green;
+			}
+
+			&:focus {
+			outline: 2.5px solid $c__green;
+			}
+		}		
 	}
 
 		&-file {
