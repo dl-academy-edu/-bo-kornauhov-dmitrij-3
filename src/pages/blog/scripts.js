@@ -1,4 +1,4 @@
-const form = document.forms["calc"];
+const form = document.forms["filter"];
 
 let data = { page: 0 };
 
@@ -7,8 +7,8 @@ let data = { page: 0 };
 (() => {
 	const tagsBox = document.querySelector(".tags_js"),
 				postBox = document.querySelector(".posts_js"),
-				searchButton = document.querySelector(".button-search_js"),
-				resetButton = document.querySelector(".button-reset_js"),
+				searchButton = document.querySelector(".search-button_js"),
+				resetButton = document.querySelector(".reset-button_js"),
 				paginationBox = document.querySelector(".pagination_js"),
 				leftArrow = document.querySelector(".left-arrow_js"),
 				rightArrow = document.querySelector(".right-arrow_js");
@@ -40,7 +40,6 @@ let data = { page: 0 };
 	tagsBox.innerHTML = spinnerCreator();
 	getTags();
 
-	blogPreloader();
 	setTimeout(() => searchButton.click(), 1000);
 
 	function get(e) {
@@ -52,7 +51,6 @@ let data = { page: 0 };
 		data.show = +data.show || 0;
 
 		setParamsToURL(data);
-		blogPreloader(data.show);
 		getPosts(data);
 	}
 
@@ -171,24 +169,6 @@ let data = { page: 0 };
 		xhr.onerror = () => console.error("Произошла ошибка сервера");
 	}
 
-	function blogPreloader(count = 10) {
-		let card = `
-		<li class="blog__preload blog-preload">
-			<div class="blog-preload__img"></div>
-			<div class="blog-preload__box">
-				<div class="blog-preload__tags"></div>
-				<div class="blog-preload__info"></div>
-				<div class="blog-preload__title"></div>
-				<div class="blog-preload__text"></div>
-				<div class="blog-preload__link" href="#"></div>
-			</div>
-		</li>`;
-
-		postBox.innerHTML = "";
-		for (let i = 0; i < count; i++) {
-			postBox.innerHTML += card;
-		}
-	}
 
 	function tagCreator(tag) {
 		return `

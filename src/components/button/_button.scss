@@ -1,31 +1,70 @@
-@import "./mixin";
+@import "./mixins";
 @import "./colors";
 @import "./vars";
 
-.button,
-.link {
+.button {
+	padding: 7.5px 26.5px;
 	display: inline-block;
 	font-size: 18px;
-	line-height: 22px;
 	font-weight: 700;
-	padding: 8px 18px;
+	line-height: 22px;
+	color: $c_white;
+	background: $c_black--b;
+	border: 2.5px solid $c_black--b;
 	border-radius: 30px;
-	border: 2.5px solid $c__black;
+	outline: none;
 	cursor: pointer;
-	color: $c__black;
-	background: transparent;
 	transition: $transition ease-in-out;
 
 	&:hover,
 	&:focus {
-		background: $c__black;
-		color: $c__white;
+		color: $c_black--b;
+		background: transparent;
+	}
+
+	&--link {
+		padding: 7.5px 16.5px;
+	}
+
+	&--empty {
+		color: $c_black--b;
+		background: transparent;
+
+		&:hover,
+		&:focus {
+			background: $c_black--b;
+			color: $c_white;
+		}
+	}
+
+	&--bad {
+		color: $c_error;
+		background: transparent;
+		border-color: $c_error;
+
+		&:hover,
+		&:focus {
+			color: $c_white;
+			background: $c_error;
+		}
+	}
+
+	&--good {
+		color: $c_success;
+		background: transparent;
+		border-color: $c_success;
+
+		&:hover,
+		&:focus {
+			color: $c_white;
+			background: $c_success;
+		}
 	}
 
 	&:disabled {
-		border: 2.5px solid $c__gray--light;
-		color: $c__gray--light;
+		color: $c_gray--white;
+		background: transparent;
+		border-color: $c_gray--white;
 		cursor: auto;
-		pointer-events:none;
 	}
 }

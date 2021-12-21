@@ -1,46 +1,54 @@
+@import "./mixins";
+@import "./colors";
+@import "./vars";
+
 .skills {
 	&__content {
-		text-align: center;
-		padding: 60px 0;
+		padding: 60px 0 30px 0;
 
-		@include media(0, $m_tab) {
-			padding: 60px 0 20px 0;
+		@include media($m_tab, $m_pc) {
+			padding: 60px 0 30px 0;
 		}
 
-		@include media(0, $m_mob) {
-			padding: 40px 0 10px 0;
+		@include media(0, $m_tab) {
+			padding: 40px 0 9px 0;
 		}
 	}
 
-	&__subtitle {
-		margin: 20px 0 50px 0;
+	&__title {
+		margin-bottom: 20px;
+		text-align: center;
 
-		@include media(0, $m_mob) {
-			margin: 10px 0 40px 0;
+		@include media(0, $m_tab) {
+			margin-bottom: 11px;
+		}
+	}
+
+	&__text {
+		width: 100%;
+		margin-bottom: 42px;
+		display: inline-block;
+		text-align: center;
+
+		@include media(0, $m_tab) {
+			margin-bottom: 31px;
 		}
 	}
 
 	&__list {
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
 		margin: 0 -10px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
 	}
 
 	&__item {
-		align-items: center;
 		width: 180px;
-		margin: 0 10px;
+		margin: 10px;
+		margin-bottom: 30px;
 		display: flex;
 		flex-direction: column;
-		font-size: 14px;
-		line-height: 17px;
-		font-weight: 700;
-		color: $c__gray;
-
-		@include media(0, $m_pc) {
-			margin-bottom: 40px;
-		}
+		align-items: center;
 
 		@include media($m_tab, $m_pc) {
 			width: 147px;
@@ -48,65 +56,94 @@
 
 		@include media(0, $m_tab) {
 			width: 130px;
-			margin: 0 10px 40px 10px;
 		}
 	}
 
-	&__name {
-		margin: 20px 0 28px 0;
+	&__img {
+		margin-bottom: 20px;
+	}
+
+	&__desc {
+		margin-bottom: 24px;
+		display: inline-block;		
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 17px;
+		color: $c_gray;
+
+		@include media($m_tab, $m_pc) {
+			margin-bottom: 23px;
+		}
 	}
 }
 
-.skills-progress {
+.progress {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 
-	&__interest {
+	&__percent {
 		margin-right: 12px;
+
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 17px;
+		color: $c_gray;
 	}
 
 	&__bar {
 		position: relative;
+
 		width: 142px;
 		height: 9px;
-		background: #e5e5e5;
 
-		@include media($m_mob, $m_pc) {
+		background: $c_mercury;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: $c_black--dl;
+		}
+
+		&--html {
+			&::after {
+				right: 15%;
+			}
+		}
+
+		&--css {
+			&::after {
+				right: 45%;
+			}
+		}
+
+		&--js {
+			&::after {
+				right: 95%;
+			}
+		}
+
+		&--git {
+			&::after {
+				right: 85%;
+			}
+		}
+
+		&--figma {
+			&::after {
+				right: 20%;
+			}
+		}
+
+		@include media($m_tab, $m_pc) {
 			width: 111px;
 		}
 
-		@include media(0, $m_mob) {
+		@include media(0, $m_tab) {
 			width: 94px;
-		}
-
-		&::after {
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			content: "";
-			background: $c__black;
-		}
-
-		&--html::after {
-			right: 15%;
-		}
-
-		&--css::after {
-			right: 45%;
-		}
-
-		&--script::after {
-			right: 95%;
-		}
-
-		&--git::after {
-			right: 85%;
-		}
-
-		&--figma::after {
-			right: 20%;
 		}
 	}
 }

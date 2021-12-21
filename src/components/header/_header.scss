@@ -1,47 +1,53 @@
-@import "./mixin";
+@import "./mixins";
 @import "./colors";
 @import "./vars";
 
 .header {
+	@include media(0, $m_mob--md) {
+		display: none;
+	}
+	
 	&__content {
 		padding: 33px 0;
 		display: flex;
-		border-bottom: solid 1px $c__gray;
+		justify-content: space-between;
+		border-bottom: 1px solid $c_gray;
 
-		@include media(0, $m_mob--md) {
-			display: none;
+		@include media($m_mob--md, $m_pc) {
+			padding: 36px 0 30px 0;
 		}
 	}
 
-	&__nav {
-		margin-left: auto;
-	}
-
-	&__menu {
-		display: flex;
-	}
-
-	// &__item {
-	// 	margin-left: 20px;
-	// }
-
-	&__link {
-		margin-left: 20px;
-		font-size: 18px;
-		line-height: 22px;
-		font-weight: 700;
-		color: $c__gray;
-		cursor: pointer;
+	.text {
+		color: $c_gray;
 		outline: none;
-		transition: $transition ease-in-out;
-
-		@include media(0, $m_mob--md) {
-			display: none;
-		}
+		transition: color $tr_duration $tr_easing;
 
 		&:hover,
 		&:focus {
-			color: $c__black;
+			color: $c_black;
+		}
+	}
+
+	&__logo {
+		display: inline-block;
+
+		&.active {
+			color: $c_black;
+		}
+	}
+}
+
+.nav {
+	&__list {
+		display: flex;
+	}
+
+	&__link {
+		margin-left: 20px;
+
+		@include media($m_mob--md, $m_pc) {
+			margin-left: 21px;
 		}
 	}
 }

@@ -1,7 +1,7 @@
-@import "../../components/mixin";
+@import "../../components/mixins";
 @import "../../components/colors";
 @import "../../components/vars";
 
-.contacts__bg {
-	background: $c__gray-white;
+.contacts {
+	background: $c_wild-sand;
 }

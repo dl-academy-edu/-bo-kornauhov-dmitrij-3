@@ -1,20 +1,22 @@
 <section class="blog">
-	<div class="container blog__container">
+	<div class="blog__container container">
 		<div class="blog__content">
 			<ul class="blog__list posts_js"></ul>
-				<div class="blog__paginator blog-paginator">
-					@@include('arrow-button/index.html', {
-					"class": "slider__button left-arrow_js",
+			<div class="blog__pagination blog-pagination">
+				@@include('arrow-button/index.html', {
+					"class": "blog-pagination__arrow blog-pagination__arrow--left left-arrow_js",
 					"type": "normal",
-					"rotation": "left"
-					})
-					<ul class="blog-paginator__list pagination_js"></ul>
-					@@include('arrow-button/index.html', {
-					"class": "slider__button right-arrow_js",
+					"rotation": "left",
+					"label": "Toggle Left"
+				})
+				<ul class="blog-pagination__list pagination_js"></ul>
+				@@include('arrow-button/index.html', {
+					"class": "blog-pagination__arrow blog-pagination__arrow--right right-arrow_js",
 					"type": "normal",
-					"rotation": "right"
-					})
-				</div>
+					"rotation": "right",
+					"label": "Toggle Right"
+				})
+			</div>
 		</div>
 	</div>
 </section>

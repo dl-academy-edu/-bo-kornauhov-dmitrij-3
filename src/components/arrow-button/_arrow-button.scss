@@ -1,38 +1,44 @@
-.arrow {
-	&-button {
-		z-index: 4;
-		width: 42px;
-		height: 42px;
-		background: transparent;
-		position: relative;
-		border: 2.5px solid #070707;
-		border-radius: 50%;
-		cursor: pointer;
-		transition: $transition ease-in-out;
+@import "./mixins";
+@import "./colors";
+@import "./vars";
 
-		&--right {
-			transform: rotate(180deg);
-		}
+.arrow-button {
+	position: relative;
+	width: 42px;
+	height: 42px;
+	background: transparent;
+	border: 2.5px solid $c_black;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: $transition ease-in-out;
 
-		&__img {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
+	&--right {
+		transform: rotate(180deg);
+	}
+
+	&:hover,
+	&:focus {
+		opacity: .5;
+	}
+
+	&:active {
+		opacity: .3;
+	}
+
+	&__img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%)
+	}
+
+	&:disabled {
+		opacity: .1;
+		cursor: auto;
 
 		&:hover,
 		&:focus {
-			opacity: 0.4;
-		}
-
-		&:active {
-			opacity: 0.2;
-		}
-
-		&:disabled {
-			opacity: 0.1;
-			cursor: auto;
+			opacity: .1;
 		}
 	}
 }

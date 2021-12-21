@@ -1,80 +1,83 @@
-@import "./mixin";
+@import "./mixins";
 @import "./colors";
 @import "./vars";
 
 .profile {
 	padding: 40px 0;
 
-	@include media(0, 600px) {
-		padding: 30px 0 40px 0;
-	}
-
-	&__content {
-		display: flex;
-
-		@include media(0, 600px) {
-			flex-direction: column;
-		}
+	@include media(0, $m_tab) {
+		padding: 30px 0;
 	}
 
 	&__title {
+		margin-bottom: 40px;
 
-		@include media(0, 600px) {
-			max-width: 205px;
+		@include media(0, $m_tab) {
+			width: 200px;
+			margin-bottom: 36px;
 		}
 	}
 
-	&__img-box {
-		margin: 40px 105px 0 0;
+	&__box {
+		display: flex;
+
+		@include media(0, $m_tab) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__photo {
 		width: 320px;
 		height: 450px;
-		background: $c__gray-white;
-		box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+		margin-right: 105px;
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
 
-		@include media($m_mob, 802px) {
-			margin: 40px 76px 0 0;
+		background: $c_wild-sand center center;
+		background-size: cover;
+		box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+
+		@include media($m_tab, $m_pc) {
+			width: 314px;
+			margin-right: 76px;
 		}
 
-		@include media(0, 600px) {
+		@include media(0, $m_tab) {
 			width: 280px;
+			margin-right: 40px;
+			margin-bottom: 40px;
+		}
+
+		@include media(0, 550px) {
+			margin-right: 0px;
+		}
+	}
+}
+
+.profile-info {
+	margin-bottom: 30px;
+
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 20px;
 		}
 	}
 
-	&__info {
-		margin: 40px 0 0 0;
-		display: flex;
-		flex-direction: column;
-		align-items: start;
+	&__data {
+		margin-right: 12px;
 	}
+}
 
-	&__info-list {
-		margin: 0 0 40px 0;
-	}
-
-	&__info-item {
-		margin: 0 0 20px 0;
-
-		&:last-child {
-			margin: 0;
+.profile-buttons {
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 20px;
 		}
-	}
 
-	&__info-title,
-	&__info-text {
-		font-size: 18px;
-		line-height: 21px;
-		color: c__black;
-	}
-
-	&__info-title {
-		font-weight: 700;
-		margin-right: 15px;
-	}
-
-	&__button {
-		margin: 0 0 20px 0;
+		button {
+			padding: 7.5px 16.5px;
+		}
 	}
 }

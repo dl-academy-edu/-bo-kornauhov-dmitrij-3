@@ -1,55 +1,49 @@
-@import "./mixin";
+@import "./mixins";
 @import "./colors";
 @import "./vars";
 
 .contacts {
-	&__bg {
-	background: $c__gray-white;
-	}
-
 	&__content {
 		padding: 60px 0;
 		display: flex;
-		text-align: center;
-		align-items: center;
 		flex-direction: column;
+		align-items: center;
 
-		@include media(0, $m_mob) {
-			padding: 40px 0;
+		@include media(0, $m_tab) {
+			padding: 42px 0 40px 0;
 		}
 	}
 
-	&__subtitle {
-		font-size: 18px;
-		line-height: 21px;
-		max-width: 269px;
-		margin: 20px 0 30px 0;
+	&__title {
+		margin-bottom: 20px;
 
-		@include media(0, $m_mob) {
-			margin: 10px 0 40px 0;
+		@include media(0, $m_tab) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__text {
+		max-width: 269px;
+		margin-bottom: 32px;
+		text-align: center;
+
+		@include media(0, $m_tab) {
+			margin-bottom: 41px;
 		}
 	}
 
 	&__button {
-		background: $c__black;
-		color: $c__white;
-
 		margin-bottom: 40px;
-
-		&:hover,
-		&:focus {
-			background: $c__white;
-			color: $c__black;
-		}
 	}
 
 	&__list {
+		max-width: 318px;
+		margin-bottom: 30px;
 		display: flex;
-		max-width: 350px;
 		flex-wrap: wrap;
 		justify-content: space-around;
 
-		@include media(0, $m_mob--md) {
+		@include media(0, $m_tab) {
 			max-width: 200px;
 		}
 	}
@@ -58,30 +52,21 @@
 		margin-bottom: 10px;
 	}
 
-	&__text {
-		color: $c__gray;
-		font-size: 14px;
-		line-height: 16px;
+	&__design.text-small {
+		margin-bottom: 6px;
+		color: $c_gray;
 	}
-}
 
-.contacts-design {
-	color: $c__gray;
-	font-size: 14px;
-	line-height: 16px;
-	margin: 30px 0 5px 0;
-
-	&__link {
-		color: $c__gray;
-		margin-left: 3px;
-		cursor: pointer;
-		border-bottom: 1px dashed $c__gray;
+	&__accent {
+		color: $c_gray;
+		border-bottom: 1px dashed $c_gray;
+		outline: none;
 		transition: $transition ease-in-out;
 
 		&:hover,
 		&:focus {
-			color: $c__black;
-			border-bottom: 1px solid $c__black;
+			color: $c_black--b;
+			border-bottom-style: solid;
 		}
 	}
 }

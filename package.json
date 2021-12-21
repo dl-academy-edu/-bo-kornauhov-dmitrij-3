@@ -1,9 +1,9 @@
 {
-  "name": "f-109-3",
+  "name": "Portfolio",
   "version": "1.0.0",
-  "description": "DLK 3 module",
+  "description": "",
   "main": "gulpfile.js",
-  "author": "Kornauhof Dmitriy",
+  "author": "therockshade <therockshade@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "browser-sync": "^2.26.5",

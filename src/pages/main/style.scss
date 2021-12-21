@@ -1,9 +1,11 @@
-@import "../../components/mixin";
+@import "../../components/mixins";
 @import "../../components/colors";
 @import "../../components/vars";
 
-.menu-open {
-	top: 180px;
+.menu__open {
+	top: 175px;
+
+	@include media(563px, $m_mob--md) {
+		top: 145px;
+	}
 }
-
-

@@ -6,17 +6,18 @@ const profileName = document.querySelector(".profile-name_js"),
 			profilePhoto = document.querySelector(".profile-photo_js"),
 			token = localStorage.getItem("token"),
 			userId = localStorage.getItem("userId"),
-			deleteButton = document.querySelector(".delete-js");
+			deleteButton = document.querySelector(".delete_js");
 
 let user = {};
 
 /* --- Change Password Popup --- */
 
 (() => {
-	const open = document.querySelector(".password-js"),
-				window = document.querySelector(".popup--pass"),
+	const open = document.querySelector(".change-password_js"),
+				window = document.querySelector(".popup--change-password"),
 				form = document.forms["change-password"];
 
+	let isLoading = false;
 
 	if (open) {
 		open.addEventListener("click", () => {
@@ -31,14 +32,20 @@ let user = {};
 	function submit(e) {
 		e.preventDefault();
 
+		if (isLoading) {
+			return;
+		}
+		isLoading = true;
+
 		const bodyFormData = getFormData(e.target, {}, "FormData");
 		const bodyJSON = getFormData(e.target);
 		let errors = validateData(bodyJSON, errors = {});
 		
 		if (Object.keys(errors).length > 0) {
 			setFormErrors(e.target, errors);
+			isLoading = false;
 		} else {
-			sendRequest({
+			fetchData({
 				method: "PUT",
 				body: bodyFormData,
 				url: "/api/users",
@@ -58,6 +65,7 @@ let user = {};
 				} else {
 					throw res;
 				}
+				isLoading = false;
 			})
 			.catch ((err) => {
 				if (err._message) {
@@ -65,12 +73,12 @@ let user = {};
 				} else {
 					answer(answerPopup, "Ошибка сервера", "error");
 				}
+				isLoading = false;
 			})
 		}
 	}
 
 	function validateData(data, errors = {}) {
-
 		if (data.oldPassword.length === 0) {
 			errors.oldPassword = "Пожалуйста, введите старый пароль";
 		}
@@ -90,12 +98,13 @@ let user = {};
 /* --- Change Data Popup --- */
 
 (() => {
-	const open = document.querySelector(".data-js"),
-				window = document.querySelector(".popup--data"),
-				form = document.forms["data"],
+	const open = document.querySelector(".change-data_js"),
+				window = document.querySelector(".popup--change-data"),
+				form = document.forms["change-data"],
 				file = document.querySelector(".file_js"),
-				fileText = document.querySelector(".file-text_js");
+				fileText = document.querySelector(".fileText_js");
 
+	let isLoading = false;
 
 	if (open) {
 		open.addEventListener("click", () => {
@@ -126,6 +135,7 @@ let user = {};
 		if (isLoading) {
 			return;
 		}
+		isLoading = true;
 
 		const bodyFormData = getFormData(e.target, {}, "FormData");
 		const bodyJSON = getFormData(e.target);
@@ -135,7 +145,7 @@ let user = {};
 			setFormErrors(e.target, errors);
 			isLoading = false;
 		} else {
-			sendRequest({
+			fetchData({
 				method: "PUT",
 				body: bodyFormData,
 				url: "/api/users",
@@ -155,6 +165,7 @@ let user = {};
 				} else {
 					throw res;
 				}
+				isLoading = false;
 			})
 			.catch ((err) => {
 				if (err.errors) {
@@ -162,6 +173,7 @@ let user = {};
 				} else {
 					answer(answerPopup, "Ошибка сервера", "error");
 				}
+				isLoading = false;
 			})
 		}
 	}
@@ -172,7 +184,7 @@ let user = {};
 		}
 		return errors;
 	}
-})()
+})();
 
 /* --- User Update --- */
 
@@ -181,7 +193,7 @@ function updateUserData() {
 			return window.location = "/";
 		}
 
-		sendRequest({
+		fetchData({
 			method: "GET",
 			url: `/api/users/${userId}`,
 			headers: {
@@ -217,7 +229,7 @@ function rerenderUserData(user) {
 /* --- Delete User --- */
 
 deleteButton.addEventListener("click", () => {
-	sendRequest({
+	fetchData({
 		method: "DELETE",
 		url: `/api/users/${userId}`,
 		headers: {

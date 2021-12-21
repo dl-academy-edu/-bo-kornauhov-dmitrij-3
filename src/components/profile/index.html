@@ -1,57 +1,67 @@
-<div class="profile">
-	<div class="container">
-		<h1 class="profile__title title-one">My profile</h1>
+<section class="profile">
+	<div class="profile__container container">
 		<div class="profile__content">
-			<div class="profile__img-box">
-				<img class="profile__img-photo" src="/static/images/profile-no-photo.svg" width="120" height="144">
-			</div>
-			<div class="profile__info">
-				<ul class="profile__info-list">
-					<li class="profile__info-item">
-						<span class="profile__info-title">Name:</span>
-						<span class="profile__info-text profile-name_js">Loading...</span>
-					</li>
-					<li class="profile__info-item">
-						<span class="profile__info-title">Surname:</span>
-						<span class="profile__info-text profile-surname_js">Loading...</span>
-					</li>
-					<li class="profile__info-item">
-						<span class="profile__info-title">Email:</span>
-						<span class="profile__info-text profile-email_js">Loading...</span>
-					</li>
-					<li class="profile__info-item">
-						<span class="profile__info-title">Password:</span>
-						<span class="profile__info-text profile-password_js">*****</span>
-					</li>
-					<li class="profile__info-item">
-						<span class="profile__info-title">Location:</span>
-						<span class="profile__info-text profile-location_js">Loading...</span>
-					</li>
-					<li class="profile__info-item">
-						<span class="profile__info-title">Age:</span>
-						<span class="profile__info-text profile-age_js">Loading...</span>
-					</li>
-				</ul>
-				@@include('button/index.html', {
-				"type": "button",
-				"text": "Change password",
-				"class": "profile__button password-js",
-				"disabled": "no"
-				})
-				@@include('button/index.html', {
-				"type": "button",
-				"text": "Change other data",
-				"class": "profile__button data-js",
-				"disabled": "no"
-				})
-				@@include('button/index.html', {
-				"type": "button",
-				"text": "Delete account",
-				"class": "profile__button delete-js",
-				"disabled": "no"
-				})
-
+			<h1 class="profile__title title-one">My profile</h1>
+			<div class="profile__box">
+				<div class="profile__photo profile-photo_js"></div>
+				<div class="profile__lists">
+					<ul class="profile__info profile-info">
+						<li class="profile-info__item text">
+							<span class="profile-info__data text text--bold">Name:</span>
+							<span class="profile-info__value profile-name_js">...</span>
+						</li>
+						<li class="profile-info__item text">
+							<span class="profile-info__data text text--bold">Surname:</span>
+							<span class="profile-info__value profile-surname_js">...</span>
+						</li>
+						<li class="profile-info__item text">
+							<span class="profile-info__data text text--bold">Email:</span>
+							<span class="profile-info__value profile-email_js">...</span>
+						</li>
+						<li class="profile-info__item text">
+							<span class="profile-info__data text text--bold">Password:</span>
+							<span class="profile-info__value profile-password_js">*********</span>
+						</li>
+						<li class="profile-info__item text">
+							<span class="profile-info__data text text--bold">Location:</span>
+							<span class="profile-info__value profile-location_js">...</span>
+						</li>
+						<li class="profile-info__item text">
+							<span class="profile-info__data text text--bold">Age:</span>
+							<span class="profile-info__value profile-age_js">...</span>
+						</li>
+					</ul>
+					<ul class="profile__buttons profile-buttons">
+						<li class="profile-buttons__item">
+							@@include('button/index.html', {
+								"dest": "button",
+								"type": "empty",
+								"disabled": "no",
+								"text": "Change password",
+								"class": "profile__change-password change-password_js"
+							})
+						</li>
+						<li class="profile-buttons__item">
+							@@include('button/index.html', {
+								"dest": "button",
+								"type": "empty",
+								"disabled": "no",
+								"text": "Change other data",
+								"class": "profile__change-data change-data_js"
+							})
+						</li>
+						<li class="profile-buttons__item">
+							@@include('button/index.html', {
+								"dest": "button",
+								"type": "empty",
+								"disabled": "no",
+								"text": "Delete account",
+								"class": "profile__delete delete_js"
+							})
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</section>

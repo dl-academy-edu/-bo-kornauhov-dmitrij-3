@@ -1,49 +1,63 @@
+@import "./mixins";
+@import "./colors";
+@import "./vars";
+
 .about {
-	background-color: $c__gray-white;
-	padding: 60px 0;
+	background: $c_wild-sand;
 
-	@include media(0, $m_mob) {
-		padding: 40px 0;
-	}
+	&__content {
+		padding: 60px 0 81px 0;
 
-	&__box {
-		max-width: 580px;
-		margin: 0 auto;
+		@include media(0, $m_tab) {
+			padding: 40px 0 60px 0;
+		}
 	}
 
 	&__title {
 		margin-bottom: 51px;
 		text-align: center;
 
-		@include media(0, $m_mob) {
+		@include media(0, $m_tab) {
 			margin-bottom: 30px;
 		}
+	}
+
+	&__box {
+		max-width: 578px;
+		margin: 0 auto;
 	}
 
 	&__cloud {
 		position: relative;
 		max-width: 480px;
-		border: 2.5px solid #070707;
-		margin: 0 0 40px 0;
-		padding: 15px;
+		padding: 13px 15px 15px 14px;
+		border: 2.5px solid $c_black--b;
+
+		&:not(:last-child) {
+			margin-bottom: 38px;
+
+			@include media(0, $m_tab) {
+				margin-bottom: 39px;
+			}
+		}
 
 		&::before {
-			content: "";
+			content: '';
 			position: absolute;
-			bottom: -23px;
+			bottom:-23px;
 			right: 20px;
 			border: 23px solid transparent;
-			border-top-color: $c__black;
+			border-top-color: $c_black--b;
 			border-bottom: 0;
 		}
 
 		&::after {
-			content: "";
+			content: '';
 			position: absolute;
 			bottom: -20.5px;
 			right: 20px;
 			border: 23px solid transparent;
-			border-top-color: $c__gray-white;
+			border-top-color: $c_wild-sand;
 			border-bottom: 0;
 		}
 
@@ -57,12 +71,12 @@
 				left: 20px;
 
 				border: 23px solid transparent;
-				border-top-color: $c__black;
+				border-top-color: $c_black--b;
 				border-bottom: 0;
 
-				content: "";
+				content: '';
 			}
-
+	
 			&::after {
 				position: absolute;
 				right: auto;
@@ -70,10 +84,10 @@
 				left: 20px;
 
 				border: 23px solid transparent;
-				border-top-color: $c__gray-white;
+				border-top-color: $c_wild-sand;
 				border-bottom: 0;
 
-				content: "";
+				content: '';
 			}
 		}
 	}
