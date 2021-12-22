@@ -89,7 +89,7 @@
 	width: auto;
 
 	outline: none;
-	transition: opacity $tr_easing $tr_duration;
+	transition: $transition ease-in-out;
 
 	&:hover,
 	&:focus {
@@ -132,5 +132,5 @@
 .swiper-button-prev.swiper-button-disabled {
 	opacity: .1;
 
-	transition: opacity $tr_duration $tr_easing;
+	transition: $transition ease-in-out;
 }

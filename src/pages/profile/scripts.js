@@ -10,14 +10,12 @@ const profileName = document.querySelector(".profile-name_js"),
 
 let user = {};
 
-/* --- Change Password Popup --- */
+/* Change Password Popup */
 
 (() => {
 	const open = document.querySelector(".change-password_js"),
 				window = document.querySelector(".popup--change-password"),
 				form = document.forms["change-password"];
-
-	let isLoading = false;
 
 	if (open) {
 		open.addEventListener("click", () => {
@@ -32,18 +30,12 @@ let user = {};
 	function submit(e) {
 		e.preventDefault();
 
-		if (isLoading) {
-			return;
-		}
-		isLoading = true;
-
 		const bodyFormData = getFormData(e.target, {}, "FormData");
 		const bodyJSON = getFormData(e.target);
 		let errors = validateData(bodyJSON, errors = {});
 		
 		if (Object.keys(errors).length > 0) {
 			setFormErrors(e.target, errors);
-			isLoading = false;
 		} else {
 			fetchData({
 				method: "PUT",
@@ -65,7 +57,6 @@ let user = {};
 				} else {
 					throw res;
 				}
-				isLoading = false;
 			})
 			.catch ((err) => {
 				if (err._message) {
@@ -73,7 +64,6 @@ let user = {};
 				} else {
 					answer(answerPopup, "Ошибка сервера", "error");
 				}
-				isLoading = false;
 			})
 		}
 	}
@@ -95,7 +85,7 @@ let user = {};
 	}
 })();
 
-/* --- Change Data Popup --- */
+/* Change Data Popup */
 
 (() => {
 	const open = document.querySelector(".change-data_js"),
@@ -103,8 +93,6 @@ let user = {};
 				form = document.forms["change-data"],
 				file = document.querySelector(".file_js"),
 				fileText = document.querySelector(".fileText_js");
-
-	let isLoading = false;
 
 	if (open) {
 		open.addEventListener("click", () => {
@@ -132,18 +120,12 @@ let user = {};
 	function submit(e) {
 		e.preventDefault();
 
-		if (isLoading) {
-			return;
-		}
-		isLoading = true;
-
 		const bodyFormData = getFormData(e.target, {}, "FormData");
 		const bodyJSON = getFormData(e.target);
 		let errors = validateData(bodyJSON);
 
 		if (Object.keys(errors).length > 0) {
 			setFormErrors(e.target, errors);
-			isLoading = false;
 		} else {
 			fetchData({
 				method: "PUT",
@@ -165,7 +147,6 @@ let user = {};
 				} else {
 					throw res;
 				}
-				isLoading = false;
 			})
 			.catch ((err) => {
 				if (err.errors) {
@@ -173,7 +154,6 @@ let user = {};
 				} else {
 					answer(answerPopup, "Ошибка сервера", "error");
 				}
-				isLoading = false;
 			})
 		}
 	}
@@ -186,7 +166,7 @@ let user = {};
 	}
 })();
 
-/* --- User Update --- */
+/* User Update */
 
 function updateUserData() {
 		if (!token || !userId) {
@@ -226,7 +206,7 @@ function rerenderUserData(user) {
 	profilePhoto.style = `background-image: url(${SERVER_URL}${user.photoUrl})`;
 }
 
-/* --- Delete User --- */
+/* Delete User */
 
 deleteButton.addEventListener("click", () => {
 	fetchData({

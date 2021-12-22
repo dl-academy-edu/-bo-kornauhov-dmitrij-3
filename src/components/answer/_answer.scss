@@ -47,9 +47,9 @@
 }
 
 p.answer__text--success {
-	color: $c_error;
+		color: $c_success;
 }
 
 p.answer__text--error {
-	color: $c_success;
+	color: $c_error;
 }

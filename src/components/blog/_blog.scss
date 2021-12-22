@@ -4,6 +4,7 @@
 
 .blog {
 	padding-bottom: 60px;
+	position: relative;
 
 	@include media(0, $m_tab) {
 		padding-bottom: 40px;
@@ -156,4 +157,24 @@
 			color: $c_gray;
 		}
 	}
+}
+.preloader {
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 2px solid $c_gray--white;
+	border-top: 0 $c_white;
+	animation:  animate 0.5s infinite linear;
+
+	@keyframes animate {
+		0% {
+			transform: translate(-20%, 50%) rotate(0deg);
+		}
+		100% {
+			transform: translate(-20%, 50%) rotate(360deg);
+		}
+	}	
 }

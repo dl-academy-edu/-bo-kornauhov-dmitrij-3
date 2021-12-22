@@ -155,9 +155,14 @@
 		margin-bottom: 11px;
 
 		&--reset.text-small {
-			margin: 0 0 5px 11px;
+			margin-bottom: 5px;
 			text-align: center;
 			color: $c_gray--white;
+
+			@include media(0, $m_mob--md) {
+				text-align: left;
+				margin-left: 10px;
+			}
 		}
 	}
 
@@ -390,3 +395,4 @@
 		}
 	}
 }
+

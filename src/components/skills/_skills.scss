@@ -96,7 +96,7 @@
 		width: 142px;
 		height: 9px;
 
-		background: $c_mercury;
+		background: $c_gray--white;
 
 		&::after {
 			content: "";
@@ -105,7 +105,7 @@
 			right: 0;
 			bottom: 0;
 			left: 0;
-			background: $c_black--dl;
+			background: $c_black--b;
 		}
 
 		&--html {

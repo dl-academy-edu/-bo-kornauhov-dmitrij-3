@@ -5,7 +5,7 @@ const SERVER_URL = "https://academy.directlinedev.com",
 			logoutMenu = document.querySelector(".logout--menu_js"),
 			answerPopup = document.querySelector(".answer");
 
-/* --- Login Popup --- */
+/* Login Popup */
 
 (() => {
 	const open = document.querySelector(".signin_js"),
@@ -13,8 +13,6 @@ const SERVER_URL = "https://academy.directlinedev.com",
 				form = document.forms["login"],
 				openMenu = document.querySelector(".signin--menu_js"),
 				windowMenu = document.querySelector(".popup--login");
-
-	let isLoading = false;
 
 	if (open) {
 		open.addEventListener("click", () => {
@@ -35,17 +33,11 @@ const SERVER_URL = "https://academy.directlinedev.com",
 	function submit(e) {
 		e.preventDefault();
 
-		if (isLoading) {
-			return;
-		}
-		isLoading = true;
-
 		const data = getFormData(e.target);
 		let errors = validateData(data);
 
 		if (Object.keys(errors).length > 0) {
 			setFormErrors(e.target, errors);
-			isLoading = false;
 		} else {
 			fetchData({
 				method: "POST",
@@ -77,7 +69,6 @@ const SERVER_URL = "https://academy.directlinedev.com",
 				} else {
 					answer(answerPopup, "Ошибка сервера", "error");
 				}
-				isLoading = false;
 			})
 		}
 	}
@@ -86,14 +77,14 @@ const SERVER_URL = "https://academy.directlinedev.com",
 		if(!checkEmail(data.email)) {
 			errors.email = "Введите корректный email";
 		}
-		if(data.password === "" || data.password.length < 4) {
-			errors.password = "Длина пароля от 4 символов";
+		if(data.password === "" || data.password.length < 8) {
+			errors.password = "Длина пароля от 8 символов";
 		}
 		return errors;
 	}
 })();
 
-/* --- Register Popup --- */
+/* Register Popup */
 
 (() => {
 	const open = document.querySelector(".register_js"),
@@ -101,8 +92,6 @@ const SERVER_URL = "https://academy.directlinedev.com",
 				openMenu = document.querySelector(".register--menu_js"),
 				windowMenu = document.querySelector(".popup--register"),
 				form = document.forms["register"];
-
-	let	isLoading = false;
 
 	if (open) {
 		open.addEventListener("click", () => {
@@ -123,17 +112,11 @@ const SERVER_URL = "https://academy.directlinedev.com",
 	function submit(e) {
 		e.preventDefault();
 
-		if (isLoading) {
-			return;
-		}
-		isLoading = true;
-
 		const body = getFormData(e.target);
 		let errors = validateData(body);
 
 		if (Object.keys(errors).length > 0) {
 			setFormErrors(e.target, errors);
-			isLoading = false;
 		} else {
 			fetchData({
 				method: "POST",
@@ -154,7 +137,6 @@ const SERVER_URL = "https://academy.directlinedev.com",
 				} else {
 					throw res;
 				}
-				isLoading = false;
 			})
 			.catch(err => {
 				if (err.errors) {
@@ -162,7 +144,6 @@ const SERVER_URL = "https://academy.directlinedev.com",
 				} else {
 					answer(answerPopup, "Ошибка сервера", "error");
 				}
-				isLoading = false;
 			})
 		}
 	}
@@ -177,11 +158,11 @@ const SERVER_URL = "https://academy.directlinedev.com",
 		if (data.surname === "") {
 			errors.surname = "Введите фамилию";
 		}
-		if (data.password === "" || data.password.length < 4) {
-			errors.password = "Длина пароля от 4 символов";
+		if (data.password === "" || data.password.length < 8) {
+			errors.password = "Длина пароля от 8 символов";
 		}
 		if (data.passwordRepeat !== data.password || data.passwordRepeat === "") {
-			errors.passwordRepeat = "Повторите пароль корректно";
+			errors.passwordRepeat = "Пароли должны совпадать";
 		}
 		if (data.location === "") {
 			errors.location = "Введите местоположение";
@@ -193,14 +174,12 @@ const SERVER_URL = "https://academy.directlinedev.com",
 	}
 })();
 
-/* --- Message Popup --- */
+/* Message Popup */
 
 (() => {
 	const open = document.querySelector(".message_js"),
 				window = document.querySelector(".popup--message"),
 				form = document.forms["message"];
-
-	let isLoading = false;
 
 	if (open) {
 		open.addEventListener("click", () => {
@@ -215,17 +194,11 @@ const SERVER_URL = "https://academy.directlinedev.com",
 	function submit(e) {
 		e.preventDefault();
 
-		if (isLoading) {
-			return;
-		}
-		isLoading = true;
-
 		const body = getFormData(e.target);
 		let errors = validateData(body);
 		
 		if (Object.keys(errors).length > 0) {
 			setFormErrors(e.target, errors);
-			isLoading = false;
 		} else {
 			let newData = {
 				to: body.to,
@@ -250,7 +223,6 @@ const SERVER_URL = "https://academy.directlinedev.com",
 				} else {
 					throw res;
 				}
-				isLoading = false;
 			})
 			.catch(err => {
 				if (err.errors) {
@@ -258,29 +230,28 @@ const SERVER_URL = "https://academy.directlinedev.com",
 				} else {
 					answer(answerPopup, "Ошибка сервера", "error");
 				}
-				isLoading = false;
 			})
 		}
 	}
 
 	function validateData(data, errors = {}) {
 		if (data.name === "") {
-			errors.name = "Пожалуйста, введите своё имя";
+			errors.name = "Введите своё имя";
 		}
 		if (data.subject === "") {
-			errors.subject = "Пожалуйста, введите тему сообщения";
+			errors.subject = "Введите тему сообщения";
 		}
 		if (data.to === "") {
-			errors.to = "Пожалуйста, введите ваш email";
+			errors.to = "Введите ваш email";
 		}
 		if (!checkTelephone(data.telephone)) {
-			errors.telephone = "Пожалуйста, введите валидный номер телефона";
+			errors.telephone = "Введите валидный номер телефона";
 		}
 		return errors;
 	}
 })();
 
-/* --- Mobile Menu --- */
+/* Mobile Menu */
 
 (() => {
   const menu = document.querySelector(".menu"),
@@ -309,43 +280,7 @@ const SERVER_URL = "https://academy.directlinedev.com",
   })
 })();
 
-/* --- Scroll Button --- */
-
-(() => {
-	const scrollButton = document.querySelector(".scroll-button"),
-				logo = document.querySelector(".logo_js"),
-				menu = document.querySelector(".menu_js");
-
-  if (!scrollButton) {
-    return;
-  }
-
-  window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 1500) {
-      scrollButton.classList.add("open_js");
-    } else {
-      scrollButton.classList.remove("open_js");
-    }
-  })
-
-  scrollButton.addEventListener("click", () => {
-		window.scrollTo({ top: 0, behavior: "smooth" });
-		
-		if (logo) {
-			setTimeout(() => {
-				logo.focus();
-			}, 1000)
-		}
-
-		if (menu) {
-			setTimeout(() => {
-				menu.focus();
-			}, 1000)
-		}
-  })
-})();
-
-/* --- Popup Windows Functional --- */
+/* Popup Windows Functional */
 
 function popup(popup, button, form) {
 	const close = popup.querySelector(".popup__close"),
@@ -423,110 +358,7 @@ function answer(popup, text, type) {
 	})
 }
 
-/* --- Slider --- */
-
-function slider({ sliderEl, defaultActiveSlide = +localStorage.getItem("activeSlide") || 0 }) {
-  const slider = document.querySelector(sliderEl),
-				wrapper = slider.querySelector(".slider__wrapper"),
-				innerWrapper = slider.querySelector(".slider__inner-wrapper"),
-				slides = [...slider.querySelectorAll(".slider__slide")],
-				pagination = slider.querySelector(".pagination"),
-				buttonBack = slider.querySelector(".arrow-button--left"),
-				buttonNext = slider.querySelector(".arrow-button--right"),
-				aniTime = 500;
-
-  let activeSlide = defaultActiveSlide,
-			slideWidth = 0,
-			dots = [],
-			timerId = null;
-
-  initSlidesWidth();
-  createPagination();
-  setActiveSlide(activeSlide, false);
-
-  window.addEventListener("resize", () => {
-    initSlidesWidth();
-    setActiveSlide(activeSlide, false);
-  })
-
-  function addAnimation(duration) {
-    clearTimeout(timerId);
-		innerWrapper.style.transition = `transform ${duration}ms`;
-		
-    timerId = setTimeout(() => {
-      innerWrapper.style.transition = ``;
-    }, duration);
-  }
-
-  function createPagination() {
-    for (let i = 0; i < slides.length; i++) {
-      let dot = createDot(i);
-      pagination.insertAdjacentElement("beforeend", dot);
-      dots.push(dot);
-    }
-  }
-
-  function createDot(index) {
-    let dot = document.createElement("button");
-		dot.classList.add("pagination__button");
-		dot.setAttribute("aria-label", `Slide number ${index + 1}`)
-
-    if (index === activeSlide) {
-      dot.classList.add("pagination__button--active");
-		}
-		
-    dot.addEventListener("click", () => {
-      setActiveSlide(index);
-		})
-		
-    return dot;
-  }
-
-  function initSlidesWidth() {
-		slideWidth = wrapper.clientWidth;
-		
-    slides.forEach((slide) => {
-      slide.style.width = `${slideWidth}px`;
-    })
-  }
-
-  function setActiveSlide(index = 0, playAnimation = true) {
-    if (index < 0 || index >= slides.length) {
-      return;
-    }
-    if (playAnimation) {
-      addAnimation(aniTime);
-		}
-		
-    dots[activeSlide].classList.remove("pagination__button--active");
-		dots[index].classList.add("pagination__button--active");
-		
-    if (index === 0) {
-      buttonBack.setAttribute("disabled", "");
-    } else {
-      buttonBack.removeAttribute("disabled");
-    }
-    if (index === slides.length - 1) {
-      buttonNext.setAttribute("disabled", "");
-    } else {
-      buttonNext.removeAttribute("disabled");
-		}
-		
-    innerWrapper.style.transform = `translateX(-${slideWidth * index}px)`;
-		activeSlide = index;
-		localStorage.setItem("activeSlide", activeSlide);
-  }
-
-  buttonBack.addEventListener("click", () => {
-    setActiveSlide(activeSlide - 1);
-  })
-
-  buttonNext.addEventListener("click", () => {
-    setActiveSlide(activeSlide + 1);
-  })
-}
-
-/* --- Validation --- */
+/* Validation */
 
 function checkEmail(email) {
 	return email.match(/^[0-9a-z-\.]+\@[0-9a-z-]{2,}\.[a-z]{2,}$/i);
@@ -572,7 +404,7 @@ function textSuccess(input) {
 	input.setAttribute("isSuccessText", "");
 	const message = document.createElement('span');
 	message.classList.add('popup__text','popup__text--success','text-small');
-	message.innerText = "All done";
+	message.innerText = " Успешно";
 	input.insertAdjacentElement("afterend", message);
 
 	input.addEventListener("input", () => {
@@ -715,13 +547,138 @@ function setValueToForm(form, data) {
 	return data;
 }
 
-/* --- Other --- */
+/* Scroll Button */
+
+(() => {
+	const scrollButton = document.querySelector(".scroll-button")
+
+  if (!scrollButton) {
+    return;
+  }
+
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 1500) {
+      scrollButton.classList.add("open_js");
+    } else {
+      scrollButton.classList.remove("open_js");
+    }
+  })
+
+  scrollButton.addEventListener("click", () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+  })
+})();
+
+/* --- Slider --- */
+
+function slider({ sliderEl, defaultActiveSlide = +localStorage.getItem("activeSlide") || 0 }) {
+  const slider = document.querySelector(sliderEl),
+				wrapper = slider.querySelector(".slider__wrapper"),
+				innerWrapper = slider.querySelector(".slider__inner-wrapper"),
+				slides = [...slider.querySelectorAll(".slider__slide")],
+				pagination = slider.querySelector(".pagination"),
+				buttonBack = slider.querySelector(".arrow-button--left"),
+				buttonNext = slider.querySelector(".arrow-button--right"),
+				aniTime = 500;
+
+  let activeSlide = defaultActiveSlide,
+			slideWidth = 0,
+			dots = [],
+			timerId = null;
+
+  initSlidesWidth();
+  createPagination();
+  setActiveSlide(activeSlide, false);
+
+  window.addEventListener("resize", () => {
+    initSlidesWidth();
+    setActiveSlide(activeSlide, false);
+  })
+
+  function addAnimation(duration) {
+    clearTimeout(timerId);
+		innerWrapper.style.transition = `transform ${duration}ms`;
+		
+    timerId = setTimeout(() => {
+      innerWrapper.style.transition = ``;
+    }, duration);
+  }
+
+  function createPagination() {
+    for (let i = 0; i < slides.length; i++) {
+      let dot = createDot(i);
+      pagination.insertAdjacentElement("beforeend", dot);
+      dots.push(dot);
+    }
+  }
+
+  function createDot(index) {
+    let dot = document.createElement("button");
+		dot.classList.add("pagination__button");
+		dot.setAttribute("aria-label", `Slide number ${index + 1}`)
+
+    if (index === activeSlide) {
+      dot.classList.add("pagination__button--active");
+		}
+		
+    dot.addEventListener("click", () => {
+      setActiveSlide(index);
+		})
+		
+    return dot;
+  }
+
+  function initSlidesWidth() {
+		slideWidth = wrapper.clientWidth;
+		
+    slides.forEach((slide) => {
+      slide.style.width = `${slideWidth}px`;
+    })
+  }
+
+  function setActiveSlide(index = 0, playAnimation = true) {
+    if (index < 0 || index >= slides.length) {
+      return;
+    }
+    if (playAnimation) {
+      addAnimation(aniTime);
+		}
+		
+    dots[activeSlide].classList.remove("pagination__button--active");
+		dots[index].classList.add("pagination__button--active");
+		
+    if (index === 0) {
+      buttonBack.setAttribute("disabled", "");
+    } else {
+      buttonBack.removeAttribute("disabled");
+    }
+    if (index === slides.length - 1) {
+      buttonNext.setAttribute("disabled", "");
+    } else {
+      buttonNext.removeAttribute("disabled");
+		}
+		
+    innerWrapper.style.transform = `translateX(-${slideWidth * index}px)`;
+		activeSlide = index;
+		localStorage.setItem("activeSlide", activeSlide);
+  }
+
+  buttonBack.addEventListener("click", () => {
+    setActiveSlide(activeSlide - 1);
+  })
+
+  buttonNext.addEventListener("click", () => {
+    setActiveSlide(activeSlide + 1);
+  })
+}
+
+/* Other */
 
 function fetchData({ method = "get", url = "", headers = {}, body = null }) {
 	return fetch(SERVER_URL + url, {
-		method: method,
-		body: body,
-		headers: headers
+		method,
+		body,
+		headers
 	})
 }
 
@@ -786,5 +743,5 @@ function logoutUser() {
 }
 
 function spinnerCreator() {
-	return `<div class="spinner">Loading...</div>`;
+	return `<div class="blog__preloader preloader"></div>`;
 }

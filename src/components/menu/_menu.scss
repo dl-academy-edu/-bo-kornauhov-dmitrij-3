@@ -32,15 +32,15 @@
 		line-height: 41px;
 		color: $c_gray;
 		outline: none;
-		transition: color $tr_duration $tr_easing;
+		transition: $transition ease-in-out;
 
 		&.active {
-			color: $c_black--dl;
+			color: $c_black--b;
 		}
 
 		&:hover,
 		&:focus {
-			color: $c_black--dl;
+			color: $c_black--b;
 		}
 	}
 
@@ -53,7 +53,7 @@
 		border: none;
 		outline: none;
 		cursor: pointer;
-		transition: opacity $tr_duration $tr_easing;
+		transition: $transition ease-in-out;
 
 		&:hover,
 		&:focus {
@@ -73,7 +73,7 @@
 		border: none;
 		outline: none;
 		cursor: pointer;
-		transition: opacity $tr_duration $tr_easing;
+		transition: $transition ease-in-out;
 
 		&:hover,
 		&:focus {

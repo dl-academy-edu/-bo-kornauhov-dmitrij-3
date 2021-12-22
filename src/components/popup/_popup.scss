@@ -43,7 +43,7 @@
 		margin: auto;
 		padding: 36px 38px 38px 38px;
 		background: $c_white;
-		border: 2.5px solid $c_black--dl;
+		border: 2.5px solid $c_black--b;
 
 		&--change-password,
 		&--login {
@@ -115,20 +115,19 @@
 		&--error.text-small {
 			margin-bottom: 0;
 			margin-top: 10px;
-
-			color: $c_pomegranade;
+			color: $c_error;
 		}
 
 		&--success.text-small {
 			margin-bottom: 0;
 			margin-top: 10px;
 
-			color: $c_malachite;
+			color: $c_success;
 		}
 	}
 
 	&__accent {
-		color: $c_pomegranade;
+		color: $c_error;
 	}
 
 	&__input {
@@ -138,40 +137,42 @@
 		font-size: 18px;
 		font-weight: 500;
 		line-height: 21px;
-		color: $c_black--dl;
+		color: $c_black--b;
 
-		border: 2.5px solid $c_mercury;
+		border: 2.5px solid $c_gray--white;
 		outline: none;
 
-		transition: border-color $tr_duration $tr_easing;
+		transition: $transition ease-in-out;
 
 		&:hover {
 			border-color: $c_gray;
 		}
 
 		&:focus {
-			border-color: $c_black--dl;
+			border-color: $c_black--b;
 		}
 
 		&--error {
-			border-color: $c_pomegranade;
-			 
+			border-color: $c_error;
+
 			&:hover,
 			&:focus {
-				border-color: rgba($c_pomegranade, .5);
+				border-color: $c_error;
+				opacity: .5;
 			}
 		}
 
 		&--success {
-			border-color: $c_malachite;
+			border-color: $c_success;
 
 			&:hover,
 			&:focus {
-				border-color: rgba($c_malachite, .5);;
+				border-color: $c_success;
+				opacity: .5;
 			}
 		}
 
-		&[type="file"] {
+		&--file {
 			width: 97%;
 			height: 50px;
 
@@ -205,7 +206,7 @@
 			font-size: 18px;
 			font-weight: 500;
 			line-height: 21px;
-			color: $c_black--dl;
+			color: $c_black--b;
 		}
 	}
 
@@ -215,17 +216,17 @@
 		padding: 12px 14px;
 		font-size: 18px;
 		line-height: 21px;
-		color: $c_black--dl;
-		border: 2.5px solid $c_mercury;
+		color: $c_black--b;
+		border: 2.5px solid $c_gray--white;
 		outline: none;
-		transition: border-color $tr_duration $tr_easing;
+		transition: $transition ease-in-out;
 
 		&:hover {
 			border-color: $c_gray;
 		}
 
 		&:focus {
-			border-color: $c_black--dl;
+			border-color: $c_black--b;
 		}
 	}
 
@@ -238,12 +239,10 @@
 			margin-right: 15px;
 			display: inline-block;
 			line-height: 0;
-
-			border: 2.5px solid $c_black--dl;
+			border: 2.5px solid $c_black--b;
 			border-radius: 3px;
 			opacity: .1;
-
-			transition: opacity $tr_duration $tr_easing;
+			transition: $transition ease-in-out;
 		}
 
 		&-text {
@@ -251,7 +250,7 @@
 			font-size: 14px;
 			line-height: 16px;
 			opacity: .1;
-			transition: opacity $tr_duration $tr_easing;
+			transition: $transition ease-in-out;
 		}
 
 		&:checked ~ .popup__checkbox-checker::before {
@@ -270,7 +269,7 @@
 		}
 
 		&:disabled ~ .popup__checkbox-checker {
-			border-color: $c_pomegranade;
+			border-color: $c_error;
 		}
 	}
 
@@ -288,7 +287,7 @@
 		outline: none;
 		cursor: pointer;
 
-		transition: opacity $tr_duration $tr_easing;
+		transition: $transition ease-in-out;
 
 		&:hover,
 		&:focus {

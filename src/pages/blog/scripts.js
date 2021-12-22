@@ -1,8 +1,8 @@
-const form = document.forms["filter"];
+const form = document.forms["filter"]
 
 let data = { page: 0 };
 
-/* --- Get Posts, Tags, and Pagination --- */
+/* Get Posts */
 
 (() => {
 	const tagsBox = document.querySelector(".tags_js"),
@@ -11,7 +11,8 @@ let data = { page: 0 };
 				resetButton = document.querySelector(".reset-button_js"),
 				paginationBox = document.querySelector(".pagination_js"),
 				leftArrow = document.querySelector(".left-arrow_js"),
-				rightArrow = document.querySelector(".right-arrow_js");
+				rightArrow = document.querySelector(".right-arrow_js"),
+				preLoader = document.querySelector(".preloader");
 
 	form.addEventListener("submit", (e) => get(e));
 
@@ -36,6 +37,10 @@ let data = { page: 0 };
 			get(e);
 		}
 	});
+
+	setTimeout(function(){
+		preLoader.classList.add("hide_js")
+	}, 1000);
 
 	tagsBox.innerHTML = spinnerCreator();
 	getTags();
@@ -230,7 +235,7 @@ let data = { page: 0 };
 	}
 })();
 
-/* --- URL Functions --- */
+/* URL Functions */
 
 function setParamsToURL(params = {}) {
 	const keysArr = Object.keys(params);

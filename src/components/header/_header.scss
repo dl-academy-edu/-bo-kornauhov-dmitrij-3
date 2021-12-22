@@ -21,7 +21,7 @@
 	.text {
 		color: $c_gray;
 		outline: none;
-		transition: color $tr_duration $tr_easing;
+		transition: $transition ease-in-out;
 
 		&:hover,
 		&:focus {

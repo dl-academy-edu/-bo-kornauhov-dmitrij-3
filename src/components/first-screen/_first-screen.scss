@@ -87,17 +87,17 @@
 		height: 10px;
 		cursor: pointer;
 
-		background: $c_mercury;
+		background: $c_gray--white;
 		border: none;
 		border-radius: 50%;
-		transition: background-color $tr_duration $tr_easing;
+		transition: $transition ease-in-out;
 
 		&:not(:last-child) {
 			margin-right: 7px;
 		}
 
 		&--active {
-			background: $c_black--dl;
+			background: $c_black--b;
 		}
 
 		&:hover,
