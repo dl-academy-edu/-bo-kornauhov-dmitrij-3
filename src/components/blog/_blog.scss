@@ -1,0 +1,180 @@
+@import "./mixins";
+@import "./colors";
+@import "./vars";
+
+.blog {
+	padding-bottom: 60px;
+	position: relative;
+
+	@include media(0, $m_tab) {
+		padding-bottom: 40px;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+
+		@include media(0, 670px) {
+			align-items: center;
+		}
+	}
+
+	&__item {
+		padding: 19px 0 21px 0;
+		display: flex;
+		align-items: center;
+
+		border-bottom: 2px solid $c_gray--white;
+
+		&:first-child {
+			border-top: 2px solid $c_gray--white;
+		}
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		@include media(0, 670px) {
+			width: 280px;
+			padding: 19px 0 16px 0;
+			flex-wrap: wrap;
+		}
+	}
+
+	&__img {
+		width: 320px;
+		height: 236px;
+		max-width: none;
+		margin-right: 20px;
+		background: $c_gray--white;
+
+		@include media(670px, 800px) {
+			width: 314px;
+			height: 299px;
+		}
+
+		@include media(0, 670px) {
+			width: 280px;
+			height: 280px;
+			margin-right: 0;
+			margin-bottom: 19px;
+		}
+	}
+
+	&__box {
+		padding: 4px 20px 0 0;
+
+		@include media(0, 670px) {
+			padding: 0;
+		}
+	}
+
+	&__tags {
+		margin-bottom: 10px;
+		display: flex;
+	}
+
+	&__tag {
+		width: 30px;
+		height: 10px;
+		background: $c_black;
+		border-radius: 5px;
+
+		&:not(last-child) {
+			margin-right: 5px;
+		}
+	}
+
+	&__info {
+		margin-bottom: 13px;
+	}
+
+	&__info span {
+		color: $c_gray;
+
+		&:not(:last-child) {
+			margin-right: 7px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 10px;
+	}
+
+	&__text {
+		margin-bottom: 22px;
+		letter-spacing: 0.1px;
+	}
+
+	&__link {
+		margin-bottom: 5px;
+		display: inline-block;
+		border-bottom: 1px dashed $c_black--b;
+		outline: none;
+
+		&:hover,
+		&:focus {
+			border-bottom-style: solid;
+		}
+	}
+}
+
+
+.blog-pagination {
+	margin-top: 29px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@include media($m_tab, $m_pc) {
+		margin-top: 19px;
+	}
+
+	@include media(0, $m_tab) {
+		margin-top: 9px;
+	}
+
+	&__list {
+		margin-left: 10px;
+		display: flex;
+	}
+
+	&__item {
+		margin-right: 10px;
+	}
+
+	.text {
+		color: $c_gray--white;
+		outline: none;
+		transition: $transition ease-in-out;
+
+		&.active {
+			color: $c_black--b;
+		}
+
+		&:hover,
+		&:focus {
+			color: $c_gray;
+		}
+	}
+}
+.preloader {
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 2px solid $c_gray--white;
+	border-top: 0 $c_white;
+	animation:  animate 0.5s infinite linear;
+
+	@keyframes animate {
+		0% {
+			transform: translate(-20%, 50%) rotate(0deg);
+		}
+		100% {
+			transform: translate(-20%, 50%) rotate(360deg);
+		}
+	}	
+}

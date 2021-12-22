@@ -1,0 +1,136 @@
+@import "./mixins";
+@import "./colors";
+@import "./vars";
+
+.portfolio {
+	background: $c_wild-sand;
+
+	&__content {
+		padding: 60px 0;
+
+		@include media($m_tab, $m_pc) {
+			padding: 61px 0 60px 0;
+		}
+
+		@include media(0, $m_tab) {
+			padding: 40px 0;
+		}
+	}
+
+	&__title {
+		text-align: center;
+		margin: 0 0 50px 0;
+
+		@include media(0, $m_mob) {
+			margin: 0 0 30px 0;
+		}
+	}
+
+	&__bottom {
+		background: rgba(7, 7, 7, 0.85);
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		padding: 31px 0;
+		color: $c_white;
+
+		@include media(0, $m_mob) {
+			padding: 20px 0;
+		}
+	}
+
+	&__img,
+	picture {
+		width: 100%;
+	}
+
+	.text-small {
+		max-width: 400px;
+
+		font-weight: 500;
+		text-align: center;
+		color: $c_white;
+	}
+}
+
+.portfolio-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+
+	&__link {
+		font-size: 18px;
+		line-height: 21px;
+		font-weight: 500;
+		margin: 0 0 16px 0;
+		cursor: pointer;
+		color: $c_white;
+		border-bottom: 1px dashed $c_white;
+
+		@include media(0, 500px) {
+			max-width: 159px;
+		}
+
+		&:hover,
+		&:focus {
+			border-bottom: 1px solid $c_white;
+		}
+	}
+}
+
+.swiper {
+	height: 604px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	height: auto;
+	width: auto;
+
+	outline: none;
+	transition: $transition ease-in-out;
+
+	&:hover,
+	&:focus {
+		opacity: .5;
+	}
+}
+
+.swiper-button-prev {
+	left: 30px;
+
+	@include media(0, $m_tab) {
+		left: 15px;
+	}
+}
+
+.swiper-button-next {
+	right: 30px;
+
+	@include media(0, $m_tab) {
+		right: 15px;
+	}
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+	width: 25px;
+	height: 42px;
+
+	background: url(/static/images/icon-arrow.svg) center center no-repeat;
+	background-size: cover;
+
+	content: "";
+}
+
+.swiper-button-next:after {
+	transform: rotate(180deg);
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+	opacity: .1;
+
+	transition: $transition ease-in-out;
+}
